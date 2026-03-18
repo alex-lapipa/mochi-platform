@@ -1,0 +1,997 @@
+{
+  "document_id": "mochi-bilingual-vocabulary",
+  "title": "Mochi Bilingual Vocabulary — 66 Bee & Nature Words EN/ES",
+  "description": "Complete bilingual word cards for the Mochi vocabulary system. Each card has the word in English and Spanish, phonetics, example sentences, age level, difficulty, and semantic tags. Used by mochi-language agent for vocabulary teaching and the flip-card game.",
+  "tags": [
+    "vocabulary",
+    "bilingual",
+    "english",
+    "spanish",
+    "EN",
+    "ES",
+    "words",
+    "language",
+    "bee",
+    "nature"
+  ],
+  "total_cards": 66,
+  "age_levels": [
+    "toddler",
+    "preschool",
+    "early_primary"
+  ],
+  "difficulty_range": "1–3",
+  "sections": [
+    {
+      "id": "vocab-bee_basics",
+      "heading": "Vocabulary: Bee Basics",
+      "category": "bee_basics",
+      "words": [
+        {
+          "en": "varroa",
+          "es": "varroa",
+          "phonetic_en": "ˈværoʊə",
+          "phonetic_es": "ˈbaɾoa",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Varroa mites are the biggest threat to honey bee colonies globally.",
+          "example_es": "Los ácaros varroa son la mayor amenaza para las colonias de abejas.",
+          "tags": [
+            "parasite",
+            "disease",
+            "threat"
+          ]
+        },
+        {
+          "en": "hexagon",
+          "es": "hexágono",
+          "phonetic_en": "ˈheksəɡɒn",
+          "phonetic_es": "ekˈsaɣono",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Bees build their comb in perfect hexagons to save wax.",
+          "example_es": "Las abejas construyen su panal en hexágonos perfectos para ahorrar cera.",
+          "tags": [
+            "geometry",
+            "structure"
+          ]
+        },
+        {
+          "en": "drone",
+          "es": "zángano",
+          "phonetic_en": "droʊn",
+          "phonetic_es": "ˈθaŋgano",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Drone bees do not have stings and their only job is to mate.",
+          "example_es": "Los zánganos no tienen aguijón y su única función es aparearse.",
+          "tags": [
+            "male",
+            "colony"
+          ]
+        },
+        {
+          "en": "sting",
+          "es": "aguijón",
+          "phonetic_en": "stɪŋ",
+          "phonetic_es": "aɣiˈxon",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Only female bees have a sting — and they use it to protect the hive.",
+          "example_es": "Solo las abejas hembra tienen aguijón — lo usan para proteger la colmena.",
+          "tags": [
+            "defense",
+            "anatomy"
+          ]
+        },
+        {
+          "en": "bee",
+          "es": "abeja",
+          "phonetic_en": "biː",
+          "phonetic_es": "aˈbexa",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "The bee flies to the flower.",
+          "example_es": "La abeja vuela a la flor.",
+          "tags": [
+            "first_word",
+            "animal"
+          ]
+        },
+        {
+          "en": "swarm",
+          "es": "enjambre",
+          "phonetic_en": "swɔːrm",
+          "phonetic_es": "enˈxambɾe",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "When a colony swarms, it is actually reproducing as a superorganism.",
+          "example_es": "Cuando una colonia enjambra, en realidad se está reproduciendo como superorganismo.",
+          "tags": [
+            "reproduction",
+            "colony"
+          ]
+        },
+        {
+          "en": "forage",
+          "es": "forrajear",
+          "phonetic_en": "ˈfɒrɪdʒ",
+          "phonetic_es": "foɾaxeˈaɾ",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Worker bees forage up to 5km from the hive to find flowers.",
+          "example_es": "Las abejas obreras forrajean hasta 5km de la colmena en busca de flores.",
+          "tags": [
+            "behaviour",
+            "feeding"
+          ]
+        },
+        {
+          "en": "hive",
+          "es": "colmena",
+          "phonetic_en": "haɪv",
+          "phonetic_es": "kolˈmena",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "The bees live in a hive.",
+          "example_es": "Las abejas viven en una colmena.",
+          "tags": [
+            "home",
+            "colony"
+          ]
+        },
+        {
+          "en": "fly",
+          "es": "volar",
+          "phonetic_en": "flaɪ",
+          "phonetic_es": "boˈlaɾ",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "The bee can fly very fast.",
+          "example_es": "La abeja puede volar muy rápido.",
+          "tags": [
+            "verb",
+            "movement"
+          ]
+        },
+        {
+          "en": "buzz",
+          "es": "zumbar",
+          "phonetic_en": "bʌz",
+          "phonetic_es": "θumˈbaɾ",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "Listen — buzz buzz — that is a bee!",
+          "example_es": "¡Escucha — zum zum — ¡eso es una abeja!",
+          "tags": [
+            "sound",
+            "verb"
+          ]
+        },
+        {
+          "en": "yellow",
+          "es": "amarillo",
+          "phonetic_en": "ˈjeloʊ",
+          "phonetic_es": "amaˈɾiʎo",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "Bees are yellow and black.",
+          "example_es": "Las abejas son amarillas y negras.",
+          "tags": [
+            "colour",
+            "adjective"
+          ]
+        },
+        {
+          "en": "wing",
+          "es": "ala",
+          "phonetic_en": "wɪŋ",
+          "phonetic_es": "ˈala",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "A bee has four wings.",
+          "example_es": "Una abeja tiene cuatro alas.",
+          "tags": [
+            "anatomy",
+            "body"
+          ]
+        },
+        {
+          "en": "bumblebee",
+          "es": "abejorro",
+          "phonetic_en": "ˈbʌmblbiː",
+          "phonetic_es": "aβeˈxoɾo",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "The big fuzzy bumblebee makes a loud buzz — it is great at pollinating tomatoes!",
+          "example_es": "El gran abejorro peludo hace un fuerte zum zum y es perfecto para polinizar tomates.",
+          "tags": [
+            "species",
+            "fuzzy",
+            "toddler",
+            "tomato"
+          ]
+        },
+        {
+          "en": "queen",
+          "es": "reina",
+          "phonetic_en": "kwiːn",
+          "phonetic_es": "ˈrejˈna",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "The queen bee lays all the eggs.",
+          "example_es": "La abeja reina pone todos los huevos.",
+          "tags": [
+            "colony",
+            "leader"
+          ]
+        },
+        {
+          "en": "worker",
+          "es": "obrera",
+          "phonetic_en": "ˈwɜːrkər",
+          "phonetic_es": "oˈβɾeɾa",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Worker bees gather food for the colony.",
+          "example_es": "Las abejas obreras recogen alimento para la colonia.",
+          "tags": [
+            "colony",
+            "female"
+          ]
+        },
+        {
+          "en": "comb",
+          "es": "panal",
+          "phonetic_en": "koʊm",
+          "phonetic_es": "paˈnal",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Bees build the comb with wax.",
+          "example_es": "Las abejas construyen el panal con cera.",
+          "tags": [
+            "structure",
+            "wax"
+          ]
+        },
+        {
+          "en": "egg",
+          "es": "huevo",
+          "phonetic_en": "eɡ",
+          "phonetic_es": "ˈweβo",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "The queen lays a tiny egg in each cell.",
+          "example_es": "La reina pone un pequeño huevo en cada celda.",
+          "tags": [
+            "lifecycle",
+            "reproduction"
+          ]
+        },
+        {
+          "en": "larva",
+          "es": "larva",
+          "phonetic_en": "ˈlɑːrvə",
+          "phonetic_es": "ˈlaɾβa",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "A larva grows inside the wax cell.",
+          "example_es": "Una larva crece dentro de la celda de cera.",
+          "tags": [
+            "lifecycle",
+            "development"
+          ]
+        },
+        {
+          "en": "dance",
+          "es": "danza",
+          "phonetic_en": "dæns",
+          "phonetic_es": "ˈdanza",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "The bee does a dance to show where food is.",
+          "example_es": "La abeja hace una danza para mostrar dónde está la comida.",
+          "tags": [
+            "communication",
+            "waggle"
+          ]
+        },
+        {
+          "en": "colony",
+          "es": "colonia",
+          "phonetic_en": "ˈkɒləni",
+          "phonetic_es": "koˈlonja",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "A bee colony has thousands of bees.",
+          "example_es": "Una colonia de abejas tiene miles de abejas.",
+          "tags": [
+            "group",
+            "society"
+          ]
+        },
+        {
+          "en": "forager",
+          "es": "forrajeadora",
+          "phonetic_en": "fɒrɪdʒər",
+          "phonetic_es": "foɾaxeaðoɾa",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Forager bees visit up to 2000 flowers a day.",
+          "example_es": "Las abejas forrajeadoras visitan hasta 2000 flores al día.",
+          "tags": []
+        },
+        {
+          "en": "apiary",
+          "es": "colmenar",
+          "phonetic_en": "ˈeɪpiəri",
+          "phonetic_es": "kolmeˈnaɾ",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "A traditional apiary can have dozens of hives in one location.",
+          "example_es": "Un colmenar tradicional puede tener docenas de colmenas en un mismo lugar.",
+          "tags": [
+            "beekeeping",
+            "place"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-behavior",
+      "heading": "Vocabulary: Behavior",
+      "category": "behavior",
+      "words": [
+        {
+          "en": "waggle dance",
+          "es": "danza de la abeja",
+          "phonetic_en": "ˈwæɡəl dæns",
+          "phonetic_es": "ˈdanza de la aˈbexa",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "The waggle dance tells other bees the exact direction to food.",
+          "example_es": "La danza de la abeja indica a otras abejas la dirección exacta del alimento.",
+          "tags": [
+            "communication",
+            "navigation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-biology",
+      "heading": "Vocabulary: Biology",
+      "category": "biology",
+      "words": [
+        {
+          "en": "antenna",
+          "es": "antena",
+          "phonetic_en": "ænˈtenə",
+          "phonetic_es": "anˈtena",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "A bee uses its antennae to smell flowers from far away.",
+          "example_es": "Una abeja usa sus antenas para oler flores desde lejos.",
+          "tags": [
+            "anatomy",
+            "senses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-conservation",
+      "heading": "Vocabulary: Conservation",
+      "category": "conservation",
+      "words": [
+        {
+          "en": "hedgerow",
+          "es": "seto",
+          "phonetic_en": "hɛdʒroʊ",
+          "phonetic_es": "seto",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "A hedgerow provides nesting for dozens of bee species.",
+          "example_es": "Un seto proporciona nidificación para docenas de especies de abejas.",
+          "tags": []
+        },
+        {
+          "en": "meadow",
+          "es": "prado",
+          "phonetic_en": "mɛdoʊ",
+          "phonetic_es": "pɾaðo",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "A wildflower meadow is a feast for bees.",
+          "example_es": "Un prado de flores es un banquete para las abejas.",
+          "tags": []
+        },
+        {
+          "en": "wildflower",
+          "es": "flor silvestre",
+          "phonetic_en": "ˈwaɪldˌflaʊər",
+          "phonetic_es": "floɾ silˈβestɾe",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "A patch of wildflowers provides more bee food than a whole lawn of mown grass.",
+          "example_es": "Un trozo de flores silvestres proporciona más alimento para las abejas que todo un césped.",
+          "tags": [
+            "flowers",
+            "habitat",
+            "native",
+            "garden"
+          ]
+        },
+        {
+          "en": "wildflower meadow",
+          "es": "prado de flores silvestres",
+          "phonetic_en": "ˈwaɪldˌflaʊər ˈmɛdoʊ",
+          "phonetic_es": "ˈpɾaðo de floɾes silˈβestɾes",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "A wildflower meadow can support over 40 species of wild bees in one small area.",
+          "example_es": "Un prado de flores silvestres puede albergar más de 40 especies de abejas silvestres.",
+          "tags": [
+            "habitat",
+            "meadow",
+            "wild_bees",
+            "conservation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-ecology",
+      "heading": "Vocabulary: Ecology",
+      "category": "ecology",
+      "words": [
+        {
+          "en": "extinction",
+          "es": "extinción",
+          "phonetic_en": "ɪkstɪŋkʃən",
+          "phonetic_es": "ekstinθjon",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Bee extinction would collapse global food systems.",
+          "example_es": "La extinción de las abejas colapsaría los sistemas alimentarios.",
+          "tags": []
+        },
+        {
+          "en": "ecosystem",
+          "es": "ecosistema",
+          "phonetic_en": "ˈiːkoʊsɪstəm",
+          "phonetic_es": "ekosisˈtema",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Bees are a keystone species in almost every terrestrial ecosystem.",
+          "example_es": "Las abejas son una especie clave en casi todos los ecosistemas terrestres.",
+          "tags": [
+            "ecology",
+            "environment"
+          ]
+        },
+        {
+          "en": "habitat",
+          "es": "hábitat",
+          "phonetic_en": "ˈhæbɪtæt",
+          "phonetic_es": "ˈaβitat",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Restoring bee habitat is one of the most effective conservation acts.",
+          "example_es": "Restaurar el hábitat de las abejas es uno de los actos de conservación más efectivos.",
+          "tags": [
+            "ecology",
+            "conservation"
+          ]
+        },
+        {
+          "en": "rewilding",
+          "es": "rewilding",
+          "phonetic_en": "riːwaɪldɪŋ",
+          "phonetic_es": "riwaldiŋ",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Rewilding meadows creates habitat for bee species.",
+          "example_es": "El rewilding de praderas crea hábitat para las abejas.",
+          "tags": []
+        },
+        {
+          "en": "corridor",
+          "es": "corredor",
+          "phonetic_en": "kɒrɪdɔːr",
+          "phonetic_es": "koreðor",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "A pollinator corridor connects bee habitats.",
+          "example_es": "Un corredor conecta los hábitats de las abejas.",
+          "tags": []
+        },
+        {
+          "en": "nature",
+          "es": "naturaleza",
+          "phonetic_en": "neɪtʃər",
+          "phonetic_es": "natuɾaleθa",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "Bees are part of nature and nature needs them.",
+          "example_es": "Las abejas son parte de la naturaleza y la naturaleza las necesita.",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "id": "vocab-garden_basics",
+      "heading": "Vocabulary: Garden Basics",
+      "category": "garden_basics",
+      "words": [
+        {
+          "en": "tomato",
+          "es": "tomate",
+          "phonetic_en": "təˈmeɪtoʊ",
+          "phonetic_es": "toˈmate",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Bees help tomatoes grow by pollinating them.",
+          "example_es": "Las abejas ayudan a que los tomates crezcan polinizándolos.",
+          "tags": [
+            "vegetable",
+            "food"
+          ]
+        },
+        {
+          "en": "harvest",
+          "es": "cosecha",
+          "phonetic_en": "hɑːrvɪst",
+          "phonetic_es": "koseʧa",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "We harvest honey when the combs are full.",
+          "example_es": "Cosechamos la miel cuando los panales están llenos.",
+          "tags": []
+        },
+        {
+          "en": "compost",
+          "es": "compost",
+          "phonetic_en": "kɒmpɒst",
+          "phonetic_es": "kompost",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Compost feeds the garden and the bees.",
+          "example_es": "El compost alimenta el jardín y las abejas.",
+          "tags": []
+        },
+        {
+          "en": "organic",
+          "es": "ecológico",
+          "phonetic_en": "ɔːɡænɪk",
+          "phonetic_es": "ekoloxiko",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Organic farms have more wild bees.",
+          "example_es": "Las granjas ecológicas tienen más abejas silvestres.",
+          "tags": []
+        },
+        {
+          "en": "heirloom",
+          "es": "herencia",
+          "phonetic_en": "ɛːlruːm",
+          "phonetic_es": "eɾensja",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Heirloom tomatoes have better bee flowers.",
+          "example_es": "Los tomates de herencia tienen mejores flores para abejas.",
+          "tags": []
+        },
+        {
+          "en": "sovereignty",
+          "es": "soberanía",
+          "phonetic_en": "sɒvrənti",
+          "phonetic_es": "soβeɾania",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Food sovereignty means defining your own food system.",
+          "example_es": "La soberanía alimentaria es definir tu propio sistema alimentario.",
+          "tags": []
+        },
+        {
+          "en": "garden",
+          "es": "jardín",
+          "phonetic_en": "ˈɡɑːrdən",
+          "phonetic_es": "xaɾˈðin",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Plant flowers in your garden for bees.",
+          "example_es": "Planta flores en tu jardín para las abejas.",
+          "tags": [
+            "garden",
+            "plants"
+          ]
+        },
+        {
+          "en": "seed",
+          "es": "semilla",
+          "phonetic_en": "siːd",
+          "phonetic_es": "seˈmiʎa",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Save seeds so bees have flowers next year.",
+          "example_es": "Guarda semillas para que las abejas tengan flores el año próximo.",
+          "tags": [
+            "gardening",
+            "future"
+          ]
+        },
+        {
+          "en": "biodiversity",
+          "es": "biodiversidad",
+          "phonetic_en": "ˌbaɪoʊdaɪˈvɜːrsɪti",
+          "phonetic_es": "biodiβeɾsiˈðað",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "High biodiversity means more plants, more bees, and more food.",
+          "example_es": "Alta biodiversidad significa más plantas, más abejas y más alimentos.",
+          "tags": [
+            "ecology",
+            "nature"
+          ]
+        },
+        {
+          "en": "agroecology",
+          "es": "agroecología",
+          "phonetic_en": "ˌæɡroʊˌiːkɒlədʒi",
+          "phonetic_es": "aɣɾoekoloˈxia",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Agroecology supports both farmers and pollinators through biodiversity.",
+          "example_es": "La agroecología apoya tanto a los agricultores como a los polinizadores a través de la biodiversidad.",
+          "tags": [
+            "farming",
+            "science"
+          ]
+        },
+        {
+          "en": "mulch",
+          "es": "acolchado",
+          "phonetic_en": "mʌltʃ",
+          "phonetic_es": "akolʧaðo",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Mulch protects soil and nesting bees.",
+          "example_es": "El acolchado protege el suelo y las abejas.",
+          "tags": []
+        },
+        {
+          "en": "food sovereignty",
+          "es": "soberanía alimentaria",
+          "phonetic_en": "fuːd səˈvrɪnti",
+          "phonetic_es": "soβeɾaˈnia alimenˈtaɾia",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Saving seeds and protecting pollinators is the foundation of food sovereignty.",
+          "example_es": "Guardar semillas y proteger a los polinizadores es la base de la soberanía alimentaria.",
+          "tags": [
+            "rights",
+            "food",
+            "seeds"
+          ]
+        },
+        {
+          "en": "permaculture",
+          "es": "permacultura",
+          "phonetic_en": "ˈpɜːrməkʌltʃər",
+          "phonetic_es": "peɾmakulˈtuɾa",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Permaculture design works with nature.",
+          "example_es": "La permacultura trabaja con la naturaleza.",
+          "tags": [
+            "design",
+            "ecology"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-honey_wax",
+      "heading": "Vocabulary: Honey Wax",
+      "category": "honey_wax",
+      "words": [
+        {
+          "en": "honey",
+          "es": "miel",
+          "phonetic_en": "ˈhʌni",
+          "phonetic_es": "mjel",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "Honey is sweet and golden.",
+          "example_es": "La miel es dulce y dorada.",
+          "tags": [
+            "food",
+            "sweet"
+          ]
+        },
+        {
+          "en": "beeswax",
+          "es": "cera de abeja",
+          "phonetic_en": "biːzwæks",
+          "phonetic_es": "ˈθeɾa de aˈbexa",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "It takes 8kg of honey to produce 1kg of beeswax.",
+          "example_es": "Se necesitan 8kg de miel para producir 1kg de cera de abeja.",
+          "tags": [
+            "product",
+            "chemistry"
+          ]
+        },
+        {
+          "en": "propolis",
+          "es": "propóleo",
+          "phonetic_en": "ˈproʊpəlɪs",
+          "phonetic_es": "pɾoˈpoleo",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Bees use propolis as a natural antibacterial inside the hive.",
+          "example_es": "Las abejas usan el propóleo como antibacteriano natural dentro de la colmena.",
+          "tags": [
+            "product",
+            "medicine"
+          ]
+        },
+        {
+          "en": "royal jelly",
+          "es": "jalea real",
+          "phonetic_en": "ˈrɔɪəl ˈdʒeli",
+          "phonetic_es": "xaˈlea ˈreal",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Royal jelly determines whether a larva becomes a queen or worker.",
+          "example_es": "La jalea real determina si una larva se convertirá en reina u obrera.",
+          "tags": [
+            "product",
+            "queen",
+            "nutrition"
+          ]
+        },
+        {
+          "en": "wax",
+          "es": "cera",
+          "phonetic_en": "wæks",
+          "phonetic_es": "ˈθeɾa",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Beeswax is used to make candles.",
+          "example_es": "La cera de abeja se usa para fabricar velas.",
+          "tags": [
+            "product",
+            "material"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-permaculture",
+      "heading": "Vocabulary: Permaculture",
+      "category": "permaculture",
+      "words": [
+        {
+          "en": "food forest",
+          "es": "bosque comestible",
+          "phonetic_en": "fuːd ˈfɒrɪst",
+          "phonetic_es": "ˈboske komesˈtiβle",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "A food forest produces fruit and herbs across seven layers while feeding bees year-round.",
+          "example_es": "Un bosque comestible produce frutas en siete capas y alimenta a las abejas todo el año.",
+          "tags": [
+            "permaculture",
+            "food",
+            "layers",
+            "bees"
+          ]
+        },
+        {
+          "en": "companion planting",
+          "es": "plantas compañeras",
+          "phonetic_en": "ˈkɒmpənjən ˈplɑːntɪŋ",
+          "phonetic_es": "ˈplantas komˈpaɲeɾas",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Companion planting borage with tomatoes attracts bees and improves fruit yield.",
+          "example_es": "Plantar borraja junto a los tomates atrae abejas y mejora el rendimiento del fruto.",
+          "tags": [
+            "garden",
+            "ecology",
+            "companion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-pollination",
+      "heading": "Vocabulary: Pollination",
+      "category": "pollination",
+      "words": [
+        {
+          "en": "pollen",
+          "es": "polen",
+          "phonetic_en": "ˈpɒlən",
+          "phonetic_es": "ˈpolen",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Bees collect pollen to feed their babies.",
+          "example_es": "Las abejas recogen polen para alimentar a sus crías.",
+          "tags": [
+            "pollination",
+            "yellow"
+          ]
+        },
+        {
+          "en": "pollination",
+          "es": "polinización",
+          "phonetic_en": "ˌpɒlɪˈneɪʃən",
+          "phonetic_es": "polinisaˈθjon",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Without pollination, most fruits and vegetables would not exist.",
+          "example_es": "Sin polinización, la mayoría de frutas y verduras no existirían.",
+          "tags": [
+            "science",
+            "ecology"
+          ]
+        },
+        {
+          "en": "lavender",
+          "es": "lavanda",
+          "phonetic_en": "ˈlævəndər",
+          "phonetic_es": "laˈβanda",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Plant lavender to invite bees to your garden.",
+          "example_es": "Planta lavanda para invitar a las abejas a tu jardín.",
+          "tags": [
+            "herb",
+            "bee_garden"
+          ]
+        },
+        {
+          "en": "clover",
+          "es": "trébol",
+          "phonetic_en": "ˈkloʊvər",
+          "phonetic_es": "ˈtɾeβol",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Clover is one of the best plants to grow for bees.",
+          "example_es": "El trébol es una de las mejores plantas para cultivar para las abejas.",
+          "tags": [
+            "plant",
+            "forage"
+          ]
+        },
+        {
+          "en": "sunflower",
+          "es": "girasol",
+          "phonetic_en": "ˈsʌnflaʊər",
+          "phonetic_es": "xiɾaˈsol",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Sunflowers are full of nectar for bees.",
+          "example_es": "Los girasoles están llenos de néctar para las abejas.",
+          "tags": [
+            "plant",
+            "flower"
+          ]
+        },
+        {
+          "en": "nectar",
+          "es": "néctar",
+          "phonetic_en": "ˈnektər",
+          "phonetic_es": "ˈnektaɾ",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Flowers produce nectar to attract bees.",
+          "example_es": "Las flores producen néctar para atraer a las abejas.",
+          "tags": [
+            "pollination",
+            "sweet"
+          ]
+        },
+        {
+          "en": "flower",
+          "es": "flor",
+          "phonetic_en": "ˈflaʊər",
+          "phonetic_es": "flor",
+          "age_level": "toddler",
+          "difficulty": 1,
+          "example_en": "The flower has yellow petals.",
+          "example_es": "La flor tiene pétalos amarillos.",
+          "tags": [
+            "plant",
+            "nature"
+          ]
+        },
+        {
+          "en": "borage",
+          "es": "borraja",
+          "phonetic_en": "bɒrɪdʒ",
+          "phonetic_es": "boɾaxa",
+          "age_level": "child",
+          "difficulty": 2,
+          "example_en": "Plant borage next to tomatoes for the bees.",
+          "example_es": "Planta borraja junto a los tomates para las abejas.",
+          "tags": []
+        },
+        {
+          "en": "phacelia",
+          "es": "facelia",
+          "phonetic_en": "fəsiːlɪə",
+          "phonetic_es": "faθelja",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Phacelia is the most bee-attractive plant in temperate gardens.",
+          "example_es": "La facelia es la planta más atractiva para abejas en jardines templados.",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "id": "vocab-seeds_food",
+      "heading": "Vocabulary: Seeds Food",
+      "category": "seeds_food",
+      "words": [
+        {
+          "en": "open-pollinated",
+          "es": "polinización abierta",
+          "phonetic_en": "ˈoʊpən ˈpɒlɪneɪtɪd",
+          "phonetic_es": "polinisaˈθjon aˈβjeɾta",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Open-pollinated seeds reproduce true from saved seed — but only with bee pollination.",
+          "example_es": "Las semillas de polinización abierta se reproducen fieles, pero necesitan la polinización de las abejas.",
+          "tags": [
+            "seeds",
+            "genetics",
+            "bees"
+          ]
+        },
+        {
+          "en": "seed saving",
+          "es": "guardar semillas",
+          "phonetic_en": "siːd ˈseɪvɪŋ",
+          "phonetic_es": "ɡwarˈðar seˈmiʎas",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Seed saving preserves the genetic diversity of crops that bees pollinate each season.",
+          "example_es": "Guardar semillas preserva la diversidad genética de los cultivos que polinizan las abejas.",
+          "tags": [
+            "seeds",
+            "diversity",
+            "traditional"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vocab-threats",
+      "heading": "Vocabulary: Threats",
+      "category": "threats",
+      "words": [
+        {
+          "en": "monoculture",
+          "es": "monocultivo",
+          "phonetic_en": "ˈmɒnəkʌltʃər",
+          "phonetic_es": "monokulˈtiβo",
+          "age_level": "adult",
+          "difficulty": 3,
+          "example_en": "Monocultures provide no habitat for bees and depend on pesticides that harm them.",
+          "example_es": "Los monocultivos no ofrecen hábitat para las abejas y dependen de pesticidas que las dañan.",
+          "tags": [
+            "farming",
+            "threat",
+            "habitat_loss"
+          ]
+        }
+      ]
+    }
+  ]
+}

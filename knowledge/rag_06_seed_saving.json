@@ -1,0 +1,48 @@
+{
+  "document_id": "mochi-seed-saving",
+  "title": "Mochi Seed Saving & Biodiversity — The Seed Keepers",
+  "description": "Knowledge base for the Seed Keepers content pillar. Covers seed saving, seed biodiversity, traditional varieties, food sovereignty, and the Simientes Infinitas association in Cantabria. Used by mochi-garden agent and the seed-keepers-1 storycard module.",
+  "tags": [
+    "seeds",
+    "biodiversity",
+    "food-sovereignty",
+    "traditional-varieties",
+    "agroecology",
+    "Cantabria",
+    "simientes-infinitas",
+    "cultivation",
+    "heritage"
+  ],
+  "sections": [
+    {
+      "id": "what-is-seed-saving",
+      "heading": "What is Seed Saving?",
+      "content": "Seed saving is the ancient practice of collecting seeds from this year's harvest to plant next year. For thousands of years, farmers saved and exchanged seeds — selecting the best plants for flavour, resilience, and local conditions. This created thousands of unique varieties adapted to specific places. Industrial agriculture replaced most of these with a small number of commercial varieties. Today, 75% of the world's crop diversity has been lost in the last 100 years. Seed savers keep this diversity alive. A saved seed carries the memory of the land it grew in."
+    },
+    {
+      "id": "why-biodiversity-matters",
+      "heading": "Why Seed Biodiversity Matters",
+      "content": "Biodiversity is nature's insurance policy. A diverse seed collection means: (1) Resilience to disease — if one variety fails, others survive; (2) Resilience to climate — different varieties suit different weather; (3) Nutritional diversity — traditional varieties often contain more nutrients than commercial ones; (4) Cultural memory — seeds carry stories, names, and traditions; (5) Food sovereignty — communities control their own food supply when they control their seeds. Monoculture (growing one variety at scale) is efficient but fragile. The Irish Potato Famine (1845) happened because only one potato variety was grown — when blight struck, there was no backup."
+    },
+    {
+      "id": "how-to-save-seeds",
+      "heading": "How to Save Seeds (Child-Friendly Guide)",
+      "content": "Saving tomato seeds: (1) Choose your best, ripest tomato from a healthy plant; (2) Scoop out the seeds and gel into a glass of water; (3) Leave for 2–3 days — the gel ferments and separates; (4) Rinse the seeds and spread on paper to dry for 1–2 weeks; (5) Store in a paper envelope in a cool, dark, dry place; (6) Label with variety name and year. Saving bean seeds: let pods dry completely on the plant, then shell and store dry. Saving squash seeds: scoop from ripe squash, rinse, dry thoroughly, store in paper. Key rules: seeds need to be dry before storing (mould kills them), keep cool and dark, use within 3–5 years."
+    },
+    {
+      "id": "simientes-infinitas",
+      "heading": "Simientes Infinitas — Cantabria",
+      "content": "Simientes Infinitas (simientesinfinitas.com) is an association in Cantabria, northern Spain, dedicated to promoting agroecology, biodiversity conservation, sustainable food systems, and seed saving. It runs: seed networks and community seed banks where local varieties are saved and shared; workshops on ecological farming, seed saving, and traditional cultivation; collaborations with schools, farms, and cultural organisations; ecological education programmes for children and families. Its philosophy: seeds are a commons, not a commodity — they belong to communities, not corporations. The association connects directly to lapipa.io and Festival Tomate Cantabria through shared values of food sovereignty, open knowledge, and biodiversity celebration."
+    },
+    {
+      "id": "seeds-and-bees",
+      "heading": "The Connection Between Seeds and Bees",
+      "content": "Seeds and bees are inseparable. Bees pollinate the flowers that produce seeds. Without bees: no cross-pollination, reduced seed viability, genetic impoverishment. Traditional seed savers understand this — they grow bee-friendly flowers near their seed crops and never use pesticides that harm pollinators. Open-pollinated varieties (as opposed to hybrids or GMOs) rely on insect pollination to produce true seeds. Heirloom tomatoes, heritage squashes, and old bean varieties are all open-pollinated. This means their seeds are viable, saveable, and free. Hybrid seeds (F1) do not breed true — you have to buy new seeds every year. Saving open-pollinated seeds = food freedom."
+    },
+    {
+      "id": "storycard-seed-keepers",
+      "heading": "Seed Keepers Storycard Module",
+      "content": "Module slug: seed-keepers-1. Title: The Seed Keepers / Los Guardianes de las Semillas. Target words: seed/semilla, germination/germinación, harvest/cosecha, biodiversity/biodiversidad, variety/variedad, save/guardar, tradition/tradición, soil/tierra. Learning objective: Children understand why seeds are precious, that saving them keeps nature alive, and that bees help seeds grow. Mochi discovers an old jar of seeds in a community garden, learns from an elder gardener, and helps plant them — connecting past and future generations. Age: 6–8. Difficulty: 2."
+    }
+  ]
+}

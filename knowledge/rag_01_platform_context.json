@@ -1,0 +1,47 @@
+{
+  "document_id": "mochi-platform-context",
+  "title": "Mochi de los Huertos — Platform Context & Architecture",
+  "description": "Complete context for the Mochi bilingual bee microlearning platform. Use this to understand the system, agents, modules, and design philosophy.",
+  "version": "1.0",
+  "url": "https://mochinillo.com",
+  "tags": [
+    "platform",
+    "architecture",
+    "mochi",
+    "agents",
+    "supabase",
+    "microlearning"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "What is Mochi?",
+      "content": "Mochi de los Huertos (also called Mochi the Garden Bee) is a cheerful, bilingual AI character and educational platform that teaches children aged 6–8 about bees, nature, permaculture, and ecology. Mochi speaks English and Spanish. The platform lives at mochinillo.com and is built on Supabase + Vercel. Mochi is part of the LA PIPA IS LA PIPA ecosystem alongside lawtonx.com (microlearning for the AI age), idiomas.io (language and cultural discovery), Festival Tomate Cantabria, and simientesinfinitas.com (agroecology and seed saving in Cantabria)."
+    },
+    {
+      "id": "character",
+      "heading": "Mochi Character Profile",
+      "content": "Mochi is female, from Asturias, Spain. She wears a straw hat with a flower and carries a tiny explorer satchel. She has big expressive eyes, soft translucent wings, and a warm smile. Visual style: big-eyed cartoon meets nature educator — cheerful, cozy, nature-themed. Personality: joyful, caring, quirky, loyal, optimistic, sincere, playful, empathetic. She uses 'Buzztastical! 🐝✨' as her signature response to anything exciting. She responds in English unless the user writes in Spanish. Tone: warm friend from the garden, never infantile. She avoids politics, religion, and adult content."
+    },
+    {
+      "id": "design-principles",
+      "heading": "Microlearning Design Principles (Evidence-Based)",
+      "content": "Based on peer-reviewed research on how children ages 6–8 learn from short-form media: (1) Segmenting — one micro-goal per clip or screen, max 1–2 words per session; (2) Signalling — Mochi looks/points at the word referent while naming it; (3) Spaced repetition — same word reappears after 1 day, 3 days, 7 days in new bee-world contexts; (4) Social contingency simulation — timed pauses + 'your turn' prompts + confirmation feedback ('Yes! You said bee!'); (5) Low extraneous load — simple backgrounds, minimal cuts, one speaker; (6) Agency — children can choose missions and replay for badges. Fisch's capacity model: educational content must be integral to the bee narrative, not tangential, so words taught should always be words Mochi actually needs to complete her mission."
+    },
+    {
+      "id": "tech-stack",
+      "heading": "Technology Stack",
+      "content": "Frontend: static HTML/CSS/JS deployed on Vercel, offline-first via service worker. Backend: Supabase (PostgreSQL) project ID zrdywdregcrykmbiytvl at https://zrdywdregcrykmbiytvl.supabase.co. GitHub repo: https://github.com/alex-lapipa/mochi-platform. Vercel team: LA PIPA IS LA PIPA. ElevenLabs agent ID: agent_1301kkyvc82vey5896n39y1cm5hc for Mochi's voice (bilingual EN/ES TTS). AI model: claude-sonnet-4-20250514 for all agent logic."
+    },
+    {
+      "id": "database-schema",
+      "heading": "Database Tables",
+      "content": "Core tables: agents (7 AI agents), model_routes (6 intent routing rules), agent_tasks (task log), vector_stores (4 knowledge bases: mochi_knowledge_base 324 chunks, bee_facts 99 chunks, kg_nodes 84, vocabulary_cards 66). Learning tables: learning_modules (4 curriculum pillars), storycards (illustrated micro-stories), storycard_panels (individual comic panels), quiz_questions (bilingual questions), learning_sessions (session tracking), user_word_progress (spaced repetition mastery per word). Row-level security is enabled on all tables. Anonymous users can read published content and insert/update their own sessions."
+    },
+    {
+      "id": "content-pillars",
+      "heading": "Four Content Pillars",
+      "content": "1. bee_facts — Hive life, biology, behavior, pollination, honey, waggle dance, colony structure. Module: 'bee-hive-life-1'. 2. bilingual_vocabulary — 66 bilingual EN/ES word cards across categories: bee biology, pollination, honey/wax, garden ecology. Module: 'bilingual-bee-words-1'. 3. permaculture — Garden ecology, companion planting, biodiversity, soil health, pollinators, food systems. Module: 'mochi-garden-1'. Connected to lapipa.io. 4. seed_saving — Seed biodiversity, saving, sharing, traditional varieties, food sovereignty, agroecology. Module: 'seed-keepers-1'. Connected to simientesinfinitas.com (Cantabria)."
+    }
+  ]
+}

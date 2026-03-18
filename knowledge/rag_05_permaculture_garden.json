@@ -1,0 +1,200 @@
+{
+  "document_id": "mochi-permaculture-garden",
+  "title": "Mochi Permaculture & Garden Knowledge Base",
+  "description": "Knowledge base for mochi-garden agent. Covers permaculture design, companion planting, pollinators, soil health, biodiversity, food sovereignty, agroecology, and ecological farming. Connected to lapipa.io and Festival Tomate Cantabria. Used for garden mission game and family nature education.",
+  "tags": [
+    "permaculture",
+    "garden",
+    "agroecology",
+    "biodiversity",
+    "pollinators",
+    "soil",
+    "food",
+    "plants",
+    "ecology",
+    "Cantabria",
+    "lapipa"
+  ],
+  "sections": [
+    {
+      "id": "permaculture-principles",
+      "heading": "Core Permaculture Principles",
+      "content": "Permaculture is a design philosophy inspired by natural ecosystems. Key principles: (1) Observe and interact — watch the garden before acting; (2) Catch and store energy — use sun, rain, compost; (3) Obtain a yield — grow food while restoring nature; (4) Apply self-regulation — nature knows best, avoid over-intervention; (5) Use and value renewable resources; (6) Produce no waste — everything cycles; (7) Design from patterns to details — copy how forests work; (8) Integrate rather than segregate — plants help each other; (9) Use small and slow solutions — start a seed, not a supermarket; (10) Use and value diversity — the more species, the more resilient; (11) Use edges and value the marginal — wildflower borders attract bees; (12) Creatively use and respond to change."
+    },
+    {
+      "id": "bees-and-gardens",
+      "heading": "Why Bees Need Gardens (and Gardens Need Bees)",
+      "content": "Bees are the world's most important pollinators. Without bees, one-third of the food we eat would not exist. Bees visit flowers to collect pollen and nectar. While collecting, they transfer pollen between flowers, fertilising fruit and vegetables. Bee-friendly garden design: plant native wildflowers, avoid pesticides, leave patches of bare soil for ground-nesting bees, provide water sources, grow plants that flower in sequence from spring to autumn so bees always have food. Key bee-friendly plants: lavender, borage, sunflowers, clover, phacelia, calendula, foxglove, rosemary, thyme. Companion planting uses bee-attracting flowers next to vegetables to improve yields."
+    },
+    {
+      "id": "companion-planting",
+      "heading": "Companion Planting Guide",
+      "content": "Companion planting pairs plants that help each other. Classic examples: Three Sisters (corn + beans + squash) — corn provides structure, beans fix nitrogen, squash shades the soil. Tomatoes + basil — basil repels pests and improves tomato flavour. Carrots + onions — onion scent deters carrot fly, carrot scent deters onion fly. Sunflowers + cucumbers — sunflowers attract pollinators. Nasturtiums are sacrificial plants that attract aphids away from vegetables. Borage next to strawberries improves fruit set. Marigolds reduce nematode populations in soil. Plant dill near brassicas to attract beneficial insects that eat caterpillars."
+    },
+    {
+      "id": "soil-health",
+      "heading": "Soil Health & Composting",
+      "content": "Healthy soil is alive — one teaspoon contains more microorganisms than there are people on Earth. Principles: (1) Never leave soil bare — mulch or plant cover crops; (2) Minimise tillage — digging breaks fungal networks; (3) Add organic matter — compost, leaf mould, wood chips; (4) Rotate crops — prevents disease buildup; (5) Grow deep roots — break up compaction naturally. Composting: mix greens (kitchen scraps, grass) with browns (cardboard, straw) in 1:3 ratio. Keep moist. Turn monthly. Ready in 3–6 months. Worm composting (vermicomposting) is faster and child-friendly — great for Mochi missions."
+    },
+    {
+      "id": "lapipa-connection",
+      "heading": "LA PIPA IS LA PIPA & Food Sovereignty",
+      "content": "LA PIPA IS LA PIPA (lapipa.io) is an open, regenerative ecosystem celebrating biodiversity, food sovereignty, traditional seeds, ecological farming, gastronomy, music, and cultural exchange. It connects: lawtonx.com (microlearning), idiomas.io (language + cultural discovery), Festival Tomate Cantabria (tomato culture, agroecology, gastronomy), miramonte.com, alexlawton.io, gijon.ai, lapipa.ai. The platform supports open-source, knowledge sharing, and community-led food systems. Bees and tomatoes are both guardians of biodiversity — tomatoes need buzz pollination (sonication) from bumblebees. The Festival Tomate Cantabria celebrates traditional tomato varieties, connects farmers, chefs, and educators, and champions food sovereignty."
+    },
+    {
+      "id": "kb-agroecology",
+      "heading": "Knowledge: Agroecology",
+      "category": "agroecology",
+      "chunks": [
+        "Agroecological farming integrates biodiversity, organic practices, and natural pest management. Fields managed agroecologically typically host three to five times more wild bee species than conventionally managed monocultures."
+      ]
+    },
+    {
+      "id": "kb-bee_basics",
+      "heading": "Knowledge: Bee Basics",
+      "category": "bee_basics",
+      "chunks": [
+        "A single worker bee will only make about 1/12 of a teaspoon of honey in her entire lifetime. It takes thousands of bees working together to fill one jar of honey!",
+        "The longer a bee performs the waggle run, the farther away the food source. One second of waggling corresponds to roughly 1 kilometre of flight distance. Bees can communicate distances up to 10 km.",
+        "La danza de la abeja en forma de ocho indica a las compañeras de colmena tanto la dirección como la distancia de una fuente de alimento. La duración del tramo de meneo indica la distancia: más tiempo equivale a mayor distancia.",
+        "Honey bees do a special ‘waggle dance’ to tell their friends where to find yummy flowers.",
+        "Bees have three main body sections: the head, the thorax, and the abdomen. Each part has a special job, like seeing, flying, or carrying pollen.",
+        "Bees can see ultraviolet colors that humans cannot see. Flowers have special UV patterns that act like landing strips to guide bees to their nectar!",
+        "Bees are covered in tiny hairs that help them collect pollen. The pollen sticks to their fuzzy bodies as they move from flower to flower."
+      ]
+    },
+    {
+      "id": "kb-bee_culture",
+      "heading": "Knowledge: Bee Culture",
+      "category": "bee_culture",
+      "chunks": [
+        "Austrian ethologist Karl von Frisch spent decades studying bee communication and decoded the waggle dance in the 1940s. He was awarded the Nobel Prize in Physiology or Medicine in 1973 for this discovery."
+      ]
+    },
+    {
+      "id": "kb-behavior",
+      "heading": "Knowledge: Behavior",
+      "category": "behavior",
+      "chunks": [
+        "When a food source is very close (within 50 metres), a bee performs a round dance instead of a waggle dance — simply running in circles, which tells hive-mates the food is near but gives no direction.",
+        "Since the sun moves across the sky, bees continuously update the angle of their waggle dance to account for the sun's movement. A dance performed an hour after scouting will show a different angle.",
+        "Honey bees are capable of learning associations between flower colours, shapes, and nectar rewards. They can remember which flowers are rewarding and return specifically to those species.",
+        "Foraging bees deposit a footprint pheromone on flowers they visit. Subsequent bees can detect whether a flower has been recently visited and whether it is worth stopping at, reducing wasted trips.",
+        "Research has demonstrated that honey bees can distinguish between quantities up to four, suggesting a basic form of numerosity — an ability once thought exclusive to vertebrates.",
+        "Studies show bees can recall the location, timing, and type of food sources experienced in the past — a form of episodic-like memory that helps them plan foraging routes efficiently.",
+        "Honey bees use the position of the sun as a compass and memorise visual landmarks to navigate. They can travel up to 5 kilometres from the hive and reliably find their way home."
+      ]
+    },
+    {
+      "id": "kb-biology",
+      "heading": "Knowledge: Biology",
+      "category": "biology",
+      "chunks": [
+        "Honey bees possess 170 odorant receptors — far more than most insects and even more than mosquitoes — enabling them to detect incredibly subtle differences in flower scents and pheromones.",
+        "Bees beat their wings 230 times per second, creating their characteristic buzzing sound. This rapid movement allows them to carry loads up to their own body weight.",
+        "A honey bee's wings beat approximately 200 times per second, creating their characteristic buzz. The frequency of the buzz actually changes when a bee is carrying a full load of pollen.",
+        "La abeja melífera occidental (Apis mellifera) tiene más de 30 subespecies reconocidas adaptadas a distintos climas, desde la abeja negra europea hasta la abeja africana y la italiana, la más común en apicultura."
+      ]
+    },
+    {
+      "id": "kb-conservation",
+      "heading": "Knowledge: Conservation",
+      "category": "conservation",
+      "chunks": [
+        "Most native bees are solitary - they don't live in big hives like honeybees. Instead, they make small nests in the ground, hollow stems, or wood tunnels.",
+        "Organic acids like oxalic acid (found naturally in rhubarb and spinach) are an effective and residue-free treatment for Varroa mites. Beekeepers vaporise it inside hives during winter when no capped brood is present.",
+        "Traditional hedgerows connecting fields provide nesting habitat, foraging, and travel corridors for wild bees. A single 100-metre hedgerow can support dozens of bumblebee and solitary bee species and dramatically increase crop yields nearby.",
+        "For many native crops, wild bumblebees and solitary bees are actually more effective pollinators than honey bees. A single red mason bee (Osmia bicornis) can do the pollination work of 120 honey bees in an apple orchard.",
+        "Research by the Xerces Society shows that converting even small areas of lawn or monoculture to native wildflowers can triple the number of bee species in an area within two years — one of the most cost-effective conservation interventions known."
+      ]
+    },
+    {
+      "id": "kb-ecology",
+      "heading": "Knowledge: Ecology",
+      "category": "ecology",
+      "chunks": [
+        "Plants transfer carbon energy to soil, and beneficial microbes convert organic substances into minerals that plants need to thrive."
+      ]
+    },
+    {
+      "id": "kb-garden_basics",
+      "heading": "Knowledge: Garden Basics",
+      "category": "garden_basics",
+      "chunks": [
+        "Through photosynthesis, plants are like little factories that use sunlight, water from their roots, and carbon dioxide from the air to make their own sugar food!",
+        "Plants use their roots to suck up water and nutrients from the soil, just like sipping through a straw."
+      ]
+    },
+    {
+      "id": "kb-honey_wax",
+      "heading": "Knowledge: Honey Wax",
+      "category": "honey_wax",
+      "chunks": [
+        "Bees produce more than just honey! They also make beeswax, propolis (bee glue), royal jelly, and pollen. Each product has different uses in the hive.",
+        "In her entire lifetime, a single worker bee produces only about 1/12 of a teaspoon of honey. A jar of honey represents the lifetime work of hundreds of bees visiting millions of flowers.",
+        "Archaeologists have found 3,000-year-old honey in Egyptian tombs that was still edible. Honey resists spoilage because its low moisture content and high acidity (pH 3.2–4.5) prevent bacterial and fungal growth.",
+        "Collected nectar is about 80% water. Bees pass it between their mouths, adding enzymes, then fan it with their wings for days until the water content drops to below 20%. At this point the honey is sealed in wax and will keep indefinitely.",
+        "Bees must consume approximately 8kg of honey to metabolise enough energy to produce just 1kg of beeswax. Wax is secreted from four pairs of glands on the abdomen of young worker bees aged 12–18 days old.",
+        "Bees collect plant resins to make propolis, a sticky substance used to seal cracks and sterilise the hive. Propolis contains over 300 compounds including flavonoids with proven antibacterial and antifungal properties.",
+        "La miel es el único alimento producido por insectos que los humanos consumen directamente. Su color, sabor y aroma varían enormemente según las flores que visitaron las abejas, desde la miel de azahar hasta la de tomillo o castaño."
+      ]
+    },
+    {
+      "id": "kb-lifecycle",
+      "heading": "Knowledge: Lifecycle",
+      "category": "lifecycle",
+      "chunks": [
+        "During peak summer foraging season, worker bees literally work themselves to death. Their wings wear out and they die after about 6 weeks. In winter, workers who do no foraging can live up to 6 months."
+      ]
+    },
+    {
+      "id": "kb-permaculture",
+      "heading": "Knowledge: Permaculture",
+      "category": "permaculture",
+      "chunks": [
+        "Digging brings weed seeds that can remain dormant for decades to the surface where they germinate, creating more weeds.",
+        "No-dig methods let worms, insects, and microbes naturally incorporate organic mulch into soil, building structure and providing drainage.",
+        "Permaculture's core ethic is to design systems that mimic natural ecosystems. A well-designed permaculture garden includes diverse flowering plants that provide bee forage from early spring to late autumn, reducing the need for artificial fertilisers."
+      ]
+    },
+    {
+      "id": "kb-pollination",
+      "heading": "Knowledge: Pollination",
+      "category": "pollination",
+      "chunks": [
+        "About one-third of all the food we eat depends on bee pollination - including apples, almonds, blueberries, and many vegetables. Bees are essential for our food system!",
+        "Tomatoes, blueberries, and aubergines have pollen trapped in anthers with small pores. Bumblebees grab the anther and vibrate their flight muscles at a specific frequency (around 400Hz), releasing a cloud of pollen in a process called sonication.",
+        "Sin la polinización por insectos, la reproducción sexual de la mayoría de las plantas con flores sería imposible. Las abejas son responsables de mantener la diversidad genética de las plantas silvestres y los cultivos alimentarios."
+      ]
+    },
+    {
+      "id": "kb-seeds_food",
+      "heading": "Knowledge: Seeds Food",
+      "category": "seeds_food",
+      "chunks": [
+        "La soberanía alimentaria enfatiza la importancia de que pueblos y comunidades participen activamente en decisiones sobre política agraria, reconociendo su papel esencial en la producción alimentaria.",
+        "Saving open-pollinated seeds requires bees and other pollinators for cross-pollination. Industrial seed monocultures that rely on patented hybrids eliminate the genetic diversity that pollinators maintain in wild plant populations.",
+        "En 1996 se creó el Movimiento por la Soberanía Alimentaria y el Comité Internacional de Planificación, organismos que incrementaron influencia en decisiones internacionales sobre alimentación."
+      ]
+    },
+    {
+      "id": "kb-social_structure",
+      "heading": "Knowledge: Social Structure",
+      "category": "social_structure",
+      "chunks": [
+        "A queen bee can live 2-5 years and lay up to 2,000 eggs per day! She is the mother of the entire colony."
+      ]
+    },
+    {
+      "id": "kb-threats",
+      "heading": "Knowledge: Threats",
+      "category": "threats",
+      "chunks": [
+        "Female Varroa destructor mites enter a bee larva's cell just before it is capped. Inside the sealed cell they lay eggs, and the new mites feed on the developing bee's fat bodies, often causing deformities and spreading viruses.",
+        "Varroa mites are vectors for Deformed Wing Virus (DWV), which causes bees to emerge with shrivelled, useless wings. A heavily infested colony can see most new bees unable to fly, leading to rapid colony collapse.",
+        "Colony Collapse Disorder (CCD) saw billions of bees abandon their hives in the mid-2000s. Research points to multiple stressors acting together: Varroa, pesticides (especially neonicotinoids), poor nutrition, and pathogens.",
+        "Neonicotinoid pesticides, even at sub-lethal doses, have been shown to impair bees' ability to navigate, reduce foraging success, and weaken their immune systems. The EU banned outdoor use of three key neonicotinoids in 2018."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "document_id": "mochi-storycards-learning",
+  "title": "Mochi Storycards — Illustrated Microlearning Episodes",
+  "description": "Complete specification of the storycard format, existing storycards, panel structure, interaction design, and quiz system. Use this to build new storycards in Lovable or to extend the platform. Each storycard is a 3–5 panel illustrated micro-story that teaches 1–2 words.",
+  "tags": [
+    "storycards",
+    "microlearning",
+    "comics",
+    "illustrations",
+    "panels",
+    "quiz",
+    "interaction",
+    "EN",
+    "ES"
+  ],
+  "sections": [
+    {
+      "id": "storycard-format",
+      "heading": "Storycard Format Specification",
+      "content": "Each storycard: 3–5 illustrated SVG panels, 1–2 target words (bilingual EN/ES), 90–120 seconds duration, 3-question quiz at end. Panel structure: (1) Setup — Mochi in motion, no target word yet; (2) Encounter — Mochi spots or discovers the thing; (3) Teach — target word highlighted, Mochi points at referent, 'your turn' pause; (4) Use — Mochi uses the word to solve her mission; (5) Optional recap/celebration. Interaction types per panel: none, tap_to_reveal, say_it_back, point_to_it, true_false. Navigation: back/next buttons + progress dots + bilingual toggle. End screen: words learned, quiz score, bee fact, replay button."
+    },
+    {
+      "id": "existing-storycards",
+      "heading": "Published Storycards",
+      "content": "Slug: mochi-finds-a-flower | Mochi Finds a Flower / Mochi Encuentra una Flor | Words: flower, pollen / flor, polen | Objective: Child can say flower/flor and identify it in a bee-world context"
+    },
+    {
+      "id": "panel-1",
+      "heading": "Storycard Panel 1",
+      "scene_en": "Mochi is flying over a sunny meadow",
+      "scene_es": "Mochi vuela sobre un prado soleado",
+      "narration_en": "Bzzzz! I am flying high above the meadow. My wings are going so fast!",
+      "narration_es": "¡Bzzz! Estoy volando alto sobre el prado. ¡Mis alas van muy rápido!",
+      "target_word_en": null,
+      "target_word_es": null,
+      "mochi_action": "flying with wings spread, smiling",
+      "interaction_type": "none",
+      "interaction_prompt_en": null,
+      "interaction_prompt_es": null,
+      "image_prompt": "Cheerful cartoon bee with big eyes and straw hat flying over a sunny green meadow with wildflowers, warm yellow sky, soft watercolor style"
+    },
+    {
+      "id": "panel-2",
+      "heading": "Storycard Panel 2",
+      "scene_en": "Mochi spots a bright yellow flower",
+      "scene_es": "Mochi ve una flor amarilla brillante",
+      "narration_en": "Oh! What is that yellow thing? It is a FLOWER! Una flor!",
+      "narration_es": "¡Oh! ¿Qué es esa cosa amarilla? ¡Es una FLOR! A flower!",
+      "target_word_en": "flower",
+      "target_word_es": "flor",
+      "mochi_action": "pointing down at flower with wing, wide eyes",
+      "interaction_type": "none",
+      "interaction_prompt_en": null,
+      "interaction_prompt_es": null,
+      "image_prompt": "Cartoon bee pointing excitedly at a large bright yellow sunflower, close-up, soft warm colors, big expressive bee eyes"
+    },
+    {
+      "id": "panel-3",
+      "heading": "Storycard Panel 3",
+      "scene_en": "Mochi lands gently on the flower petals",
+      "scene_es": "Mochi aterriza en los pétalos de la flor",
+      "narration_en": "I am landing on the flower — can YOU say it? Say: flower! Flor!",
+      "narration_es": "Aterrizo en la flor — ¿PUEDES decirlo tú? ¡Di: flor! Flower!",
+      "target_word_en": "flower",
+      "target_word_es": "flor",
+      "mochi_action": "sitting on petals, looking at viewer",
+      "interaction_type": "say_it_back",
+      "interaction_prompt_en": "Can you say it? 🌻 FLOWER!",
+      "interaction_prompt_es": "¿Puedes decirlo? 🌻 ¡FLOR!",
+      "image_prompt": "Cartoon bee sitting on large yellow flower looking at viewer with big smile, one wing pointing outward"
+    },
+    {
+      "id": "panel-4",
+      "heading": "Storycard Panel 4",
+      "scene_en": "Mochi dances on the flower with pollen on her legs",
+      "scene_es": "Mochi baila en la flor con polen en sus patas",
+      "narration_en": "This flower gives me golden POLLEN — Polen! I carry it back to the hive. Amazing!",
+      "narration_es": "¡Esta flor me da POLLEN dorado — Polen! Lo llevo de vuelta a la colmena. ¡Increíble!",
+      "target_word_en": "pollen",
+      "target_word_es": "polen",
+      "mochi_action": "dancing with golden pollen dust on legs",
+      "interaction_type": "tap_to_reveal",
+      "interaction_prompt_en": "Tap the pollen on Mochi's legs! 🌼",
+      "interaction_prompt_es": "¡Toca el polen en las patas de Mochi! 🌼",
+      "image_prompt": "Cartoon bee dancing on yellow flower with golden pollen sparkles on small legs, joyful expression, soft pastel background"
+    },
+    {
+      "id": "quiz-design",
+      "heading": "Quiz Question Types",
+      "content": "Supported question types: image_select (show 4 images, pick correct one), word_match (pick Spanish word for English or vice versa), true_false (2-option True/False), multiple_choice (4 text options), fill_blank (complete the sentence), say_it_back (spoken production — future). Each question has: question text (EN + ES), options array (EN + ES), correct answer, Mochi explanation if wrong. Scoring: 10 points per correct. Levels: 3/3 = Bee Master, 2/3 = Pollen Pro, <2 = Explorer."
+    }
+  ]
+}

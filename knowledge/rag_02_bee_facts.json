@@ -1,0 +1,230 @@
+{
+  "document_id": "mochi-bee-facts",
+  "title": "Mochi Bee Facts Knowledge Base",
+  "description": "99 curated bee facts across 8 categories. Used by mochi-bee-facts agent to answer questions about bees, hives, honey, pollination, and bee ecology for children and adults.",
+  "tags": [
+    "bees",
+    "honey",
+    "hive",
+    "pollination",
+    "biology",
+    "ecology",
+    "child-safe"
+  ],
+  "total_facts": 99,
+  "categories": [
+    "activities",
+    "bee_basics",
+    "behavior",
+    "biology",
+    "communication",
+    "conservation",
+    "ecology",
+    "economics",
+    "fun_facts",
+    "garden_basics",
+    "honey_wax",
+    "lifecycle",
+    "pollination",
+    "social_structure"
+  ],
+  "sections": [
+    {
+      "id": "bee-facts-activities",
+      "heading": "Bee facts: Activities",
+      "category": "activities",
+      "facts": [
+        "Create homes for native solitary bees using bamboo tubes, wooden blocks with holes, or hollow plant stems. Place in a sunny, sheltered spot 3-6 feet off the ground.",
+        "Spend 10 minutes quietly watching bees visit flowers. Notice which flowers they prefer, how they move, and how much time they spend on each flower.",
+        "Choose native flowers that bloom at different times throughout the growing season. Include purple, blue, and yellow flowers which bees love most!"
+      ]
+    },
+    {
+      "id": "bee-facts-bee_basics",
+      "heading": "Bee facts: Bee Basics",
+      "category": "bee_basics",
+      "facts": [
+        "Bees have five eyes! Two big compound eyes help them see shapes, and three smaller eyes help them sense light and movement.",
+        "Bees use a special 'waggle dance' to tell other bees where to find flowers full of nectar and pollen.",
+        "Did you know bees have five eyes? They have two big eyes on the sides of their head and three tiny eyes on top. The small eyes help them see sunlight and find their way home.",
+        "Bees have two pairs of wings that beat super fast—about 200 times every second! This helps them fly quickly from flower to flower.",
+        "Bees are covered in tiny hairs that help them collect pollen. The pollen sticks to their fuzzy bodies as they move from flower to flower.",
+        "Worker bees have stingers to protect their hive. They only use them if they feel in danger.",
+        "Bees work together to build honeycombs, collect nectar, and take care of baby bees. They are super team players!",
+        "When a bee finds good flowers, she comes back to the hive and does a special wiggle dance to tell other bees exactly where to find the food. The dance shows both direction and distance!",
+        "A single worker bee will only make about 1/12 of a teaspoon of honey in her entire lifetime. It takes thousands of bees working together to fill one jar of honey!",
+        "Bees can see ultraviolet colors that humans cannot see. Flowers have special UV patterns that act like landing strips to guide bees to their nectar!",
+        "Every bee colony has a queen bee who lays all the eggs. She is the biggest bee in the hive.",
+        "A single bee will only produce about 1/12th of a teaspoon of honey in her entire lifetime. It takes about 556 worker bees to gather 1 pound of honey from about 2 million flowers!",
+        "How many wings does a honeybee have? Answer: Four wings (two pairs) that hook together to work as one large wing surface during flight.",
+        "Bees have three main body sections: the head, the thorax, and the abdomen. Each part has a special job, like seeing, flying, or carrying pollen.",
+        "Bees have two large eyes that help them see colors and patterns on flowers, even some that people can't see!",
+        "A bee’s body is covered in tiny hairs. These help them collect pollen, which sticks to the hairs as they visit flowers.",
+        "Bees have two pairs of wings that move super fast, making the buzzing sound you hear when they fly.",
+        "Every bee has six legs. Their back legs have special baskets made of stiff hairs to carry pollen home!",
+        "Bees have two antennae on their heads. They use them to smell, touch, and even taste things around them.",
+        "Honey bees do a special ‘waggle dance’ to tell their friends where to find yummy flowers.",
+        "Female worker bees have stingers to protect the hive. But they only sting if they feel threatened. Male bees, called drones, don’t have stingers at all!",
+        "Worker bees only live for about six weeks in the summer. They work hard collecting nectar and pollen for the hive.",
+        "Bees can see blue, green, and ultraviolet colors, but they can't see red. Flowers use special colors to attract bees!",
+        "Bees use their antennae to smell and touch things. Antennae help them find flowers and talk to other bees.",
+        "Every bee hive has one queen bee. She lays all the eggs and is the mother to thousands of bees in her hive.",
+        "Bees have long, hairy tongues called proboscises. These help them suck up nectar from deep inside flowers, just like using a straw!",
+        "Honey bees do a special 'waggle dance' to tell their friends where to find yummy flowers. The dance shows the direction and distance to the flowers!",
+        "A bee’s wings beat about 200 times every second! This super speed makes the buzzing sound you hear when bees fly.",
+        "Bees have a long tongue called a proboscis. They use it like a straw to suck up sweet nectar from flowers.",
+        "Female worker bees have a stinger to protect the hive. They only use it if they feel threatened.",
+        "The queen bee is the biggest bee in the hive. She lays all the eggs that become new bees.",
+        "Bees have six legs. They use their front legs to clean their eyes, and their back legs have special baskets for carrying pollen.",
+        "Bees use their antennae to smell things. Their sense of smell is so good they can even smell flowers from far away!",
+        "Bees have special 'pollen baskets' on their back legs. These are little hairy spots where they carry pollen back to the hive.",
+        "Bees are neat-freaks! They spend a lot of time cleaning their antennae, wings, and bodies to stay healthy.",
+        "Honeybees have five eyes total - two large compound eyes that can see flowers and three smaller simple eyes on top of their head that detect light and movement. These eyes help them navigate and find the best flowers!",
+        "A bee's wings beat so fast (about 230 times per second) that they create the buzzing sound we hear. Their four wings work together to help them fly in all directions!"
+      ]
+    },
+    {
+      "id": "bee-facts-behavior",
+      "heading": "Bee facts: Behavior",
+      "category": "behavior",
+      "facts": [
+        "Bees maintain their hive temperature at exactly 35°C (95°F) by fanning their wings to cool it down or clustering together to warm it up.",
+        "Bees use polarized light patterns, landmarks, and the sun's position to navigate. They can fly up to 5 miles from their hive and still find their way home.",
+        "Bees use the sun as a compass and can navigate using polarized light patterns in the sky, even on cloudy days.",
+        "Honey bees communicate the location of flowers through a special dance called the waggle dance. The duration and angle of the dance tells other bees exactly where to find the best nectar sources!",
+        "Bees release alarm pheromones when threatened, alerting the entire colony. Guard bees can distinguish between colony members and intruders by scent.",
+        "Bees perform a \"waggle dance\" to communicate the location of flowers to other bees. The angle of the dance indicates direction relative to the sun, while the duration indicates distance."
+      ]
+    },
+    {
+      "id": "bee-facts-biology",
+      "heading": "Bee facts: Biology",
+      "category": "biology",
+      "facts": [
+        "There are over 20,000 species of bees worldwide! Only about 7 species are honey bees, while most bees are solitary and don't live in hives.",
+        "What makes a queen bee? All female larvae eat royal jelly for the first three days, but future queens eat it exclusively throughout their larval development.",
+        "Worker bees live about 6 weeks during busy season, but can live several months during winter. They literally work themselves to exhaustion!",
+        "Bees beat their wings 230 times per second, creating their characteristic buzz. Despite their small wings, they can fly up to 15 mph!",
+        "Bees can see ultraviolet patterns on flowers that are invisible to humans. These UV patterns act like landing strips, guiding bees to the flower's nectar.",
+        "Bees can see ultraviolet patterns on flowers invisible to humans. These UV landing strips guide bees to nectar sources efficiently.",
+        "Worker bees produce royal jelly, a protein-rich substance that determines whether a larva becomes a worker bee or a queen. Queens are fed exclusively royal jelly.",
+        "Bees beat their wings 230 times per second, creating their characteristic buzzing sound. This rapid movement allows them to carry loads up to their own body weight.",
+        "Bees can see ultraviolet light! This helps them find nectar guides on flowers that are invisible to human eyes. They see the world very differently than we do."
+      ]
+    },
+    {
+      "id": "bee-facts-communication",
+      "heading": "Bee facts: Communication",
+      "category": "communication",
+      "facts": [
+        "Bees communicate through a waggle dance! When a worker bee finds a good source of nectar, she returns to the hive and performs a special dance that tells other bees the direction and distance to the flowers."
+      ]
+    },
+    {
+      "id": "bee-facts-conservation",
+      "heading": "Bee facts: Conservation",
+      "category": "conservation",
+      "facts": [
+        "Some pesticides can confuse bees and make it hard for them to remember how to get back to their nests, like causing them to forget their home address!",
+        "Most native bees are solitary - they don't live in big hives like honeybees. Instead, they make small nests in the ground, hollow stems, or wood tunnels."
+      ]
+    },
+    {
+      "id": "bee-facts-ecology",
+      "heading": "Bee facts: Ecology",
+      "category": "ecology",
+      "facts": [
+        "Bees and flowers have been best friends for over 100 million years! They evolved together - flowers developed colors and scents to attract bees, while bees developed the perfect tools to collect nectar and pollen.",
+        "Bees are responsible for pollinating about 1/3 of everything we eat! Without bees, we would not have many fruits, vegetables, and nuts.",
+        "Gardens and natural areas with many different types of plants support more species of bees and other beneficial insects, creating a healthy web of life.",
+        "One-third of the food we eat depends on pollination by bees. Without bees, we would lose apples, almonds, blueberries, and many other crops."
+      ]
+    },
+    {
+      "id": "bee-facts-economics",
+      "heading": "Bee facts: Economics",
+      "category": "economics",
+      "facts": [
+        "Bees contribute over $15 billion annually to U.S. agriculture through pollination services. One-third of the food we eat depends on bee pollination."
+      ]
+    },
+    {
+      "id": "bee-facts-fun_facts",
+      "heading": "Bee facts: Fun Facts",
+      "category": "fun_facts",
+      "facts": [
+        "The phrase \"bee's knees\" comes from the fact that bees carry pollen in special baskets on their knees, making them quite literally amazing!"
+      ]
+    },
+    {
+      "id": "bee-facts-garden_basics",
+      "heading": "Bee facts: Garden Basics",
+      "category": "garden_basics",
+      "facts": [
+        "Mulch is a layer of leaves or bark spread over the soil. It keeps the ground cool and helps the soil hold water longer.",
+        "Bright flowers attract bees and butterflies, which help move pollen from plant to plant so new seeds can grow.",
+        "Not all plants love the sun. Some, like ferns, prefer cool, shady spots in the garden.",
+        "Worms mix up the soil and make it fluffy, which helps plant roots breathe and grow.",
+        "Compost is made from old fruit peels and leaves. It gives gardens extra vitamins and helps plants grow big and strong.",
+        "Bamboo is one of the fastest-growing plants on Earth. Some types can grow almost a meter in just one day!",
+        "Leaves collect sunlight and turn it into energy for the plant. That’s why they’re usually green and spread out wide.",
+        "Roots hold plants in the ground and suck up water and nutrients, just like straws!",
+        "Water is super important for plants. It helps them move nutrients from the soil up to their leaves and flowers.",
+        "If plants are too close together, they can’t get enough sunlight and air. Giving them space helps them grow big and strong.",
+        "When some plants are attacked by insects, they release chemicals into the air that warn nearby plants to start making their own natural pest defenses!",
+        "Earthworms are like underground gardeners! They eat organic matter and create nutrient-rich castings that make soil super healthy for plants to grow.",
+        "Some seeds have a built-in alarm clock! They can wait in the soil for months or even years until conditions are just right - the perfect temperature, moisture, and season to start growing.",
+        "Plants have tiny holes called stomata on their leaves that open and close to let air in and out, just like how we breathe through our nose and mouth!",
+        "Plants use sunlight to make their own food in a process called photosynthesis. That’s why they love sunny spots!",
+        "Plants use their roots to suck up water and nutrients from the soil, just like sipping through a straw.",
+        "When you plant a seed in the soil and give it water, it 'wakes up' from sleep. This is called germination, and it’s how all plants start growing!",
+        "Through photosynthesis, plants are like little factories that use sunlight, water from their roots, and carbon dioxide from the air to make their own sugar food!",
+        "Just like you need food to grow strong, plants need sunlight! They use sunlight to make their own food through a process called photosynthesis.",
+        "Leaves take in sunlight, air, and water to help the plant grow. They are busy little factories!",
+        "Putting mulch, like straw or leaves, on top of soil helps keep it moist and cool, and stops weeds from growing too fast.",
+        "Bees, butterflies, and even birds visit flowers to help move pollen. This helps plants make seeds and fruit.",
+        "Earthworms wriggle through soil, making tunnels that help plant roots get air and water. They’re little garden helpers!",
+        "Some plants like lots of water, but others, like cacti, only need a little. It’s important to know what your plant likes best.",
+        "Sunflowers can grow as tall as a grown-up in just a few months, reaching for the sky!"
+      ]
+    },
+    {
+      "id": "bee-facts-honey_wax",
+      "heading": "Bee facts: Honey Wax",
+      "category": "honey_wax",
+      "facts": [
+        "Bees transform flower nectar into honey through enzymatic processes and dehydration. A single bee produces only 1/12th teaspoon of honey in her lifetime.",
+        "Bees produce more than just honey! They also make beeswax, propolis (bee glue), royal jelly, and pollen. Each product has different uses in the hive."
+      ]
+    },
+    {
+      "id": "bee-facts-lifecycle",
+      "heading": "Bee facts: Lifecycle",
+      "category": "lifecycle",
+      "facts": [
+        "Bee colonies follow seasonal patterns: spring buildup, summer peak activity, fall preparation, and winter cluster formation for survival.",
+        "A queen bee can lay up to 2,000 eggs per day during peak season - that's more than her own body weight in eggs!"
+      ]
+    },
+    {
+      "id": "bee-facts-pollination",
+      "heading": "Bee facts: Pollination",
+      "category": "pollination",
+      "facts": [
+        "Bees have thousands of tiny branched hairs all over their bodies that act like tiny hooks to collect pollen as they visit flowers. They're like flying fuzzy pollen magnets!",
+        "About one-third of all the food we eat depends on bee pollination - including apples, almonds, blueberries, and many vegetables. Bees are essential for our food system!",
+        "When bees carry pollen from one flower to another, they help create genetic diversity in plants, making them stronger and more resistant to diseases and climate changes."
+      ]
+    },
+    {
+      "id": "bee-facts-social_structure",
+      "heading": "Bee facts: Social Structure",
+      "category": "social_structure",
+      "facts": [
+        "A bee colony functions as a superorganism with up to 80,000 individual bees working together. Each bee has a specific role: workers, drones, and the queen.",
+        "A queen bee can live 2-5 years and lay up to 2,000 eggs per day! She is the mother of the entire colony.",
+        "A single bee colony can contain up to 80,000 bees during peak season! The colony works together as a superorganism, with each bee having a specific role."
+      ]
+    }
+  ]
+}
