@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Mochi Finds a Flower 🌻</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --honey: #F4A623;
+  --honey-deep: #D4881A;
+  --honey-pale: #FEF3DC;
+  --pollen: #FFD94A;
+  --meadow: #5BA85A;
+  --meadow-dark: #3D7A3C;
+  --sky: #FFF4D6;
+  --sky-blue: #B8E4F5;
+  --earth: #7B4F2E;
+  --earth-pale: #F2E4D1;
+  --bee-black: #2D2318;
+  --white: #FFFEF8;
+  --text-dark: #2D2318;
+  --text-mid: #5C4A30;
+  --coral: #E86B3F;
+  --quiz-correct: #5BA85A;
+  --quiz-wrong: #E86B3F;
+  --r: 20px;
+  --r-sm: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--earth-pale);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  min-height: 680px;
+  background: var(--white);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(45,35,24,0.18), 0 2px 8px rgba(45,35,24,0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── TOP BAR ── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 10px;
+  background: var(--honey-pale);
+  border-bottom: 2px solid rgba(244,166,35,0.2);
+  flex-shrink: 0;
+}
+
+.series-label {
+  font-family: 'Baloo 2', cursive;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--honey-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(244,166,35,0.25);
+  transition: all 0.3s ease;
+}
+.dot.active { background: var(--honey); width: 22px; border-radius: 4px; }
+.dot.done { background: var(--meadow); }
+
+.lang-toggle {
+  display: flex;
+  gap: 2px;
+  background: rgba(244,166,35,0.15);
+  border-radius: 20px;
+  padding: 3px;
+}
+.lang-btn {
+  border: none; background: transparent;
+  padding: 3px 10px;
+  border-radius: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--honey-deep);
+  cursor: pointer; transition: all 0.2s;
+}
+.lang-btn.active {
+  background: var(--honey);
+  color: var(--white);
+  box-shadow: 0 2px 6px rgba(212,136,26,0.3);
+}
+
+/* ── SCREEN BASE ── */
+.screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  animation: fadeIn 0.4s ease;
+}
+.screen.active { display: flex; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pop { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes wiggle { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+@keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+@keyframes sparkle { 0% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0; transform: scale(0.8); } }
+@keyframes shimmer { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
+
+/* ── COVER SCREEN ── */
+#cover .illustration { flex: 1; position: relative; overflow: hidden; }
+#cover .cover-svg { width: 100%; height: 100%; display: block; }
+
+.cover-text {
+  padding: 20px 24px 28px;
+  text-align: center;
+}
+.cover-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 28px; font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.cover-subtitle {
+  font-size: 15px; color: var(--text-mid); margin-bottom: 20px;
+}
+.cover-meta {
+  display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--honey-pale); border-radius: 20px;
+  padding: 5px 12px; font-size: 12px; font-weight: 700;
+  color: var(--honey-deep); border: 1px solid rgba(244,166,35,0.3);
+}
+
+.btn-start {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, var(--honey) 0%, var(--honey-deep) 100%);
+  color: var(--white);
+  font-family: 'Baloo 2', cursive;
+  font-size: 20px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(212,136,26,0.4);
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.btn-start:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,136,26,0.5); }
+.btn-start:active { transform: translateY(0); }
+
+/* ── PANEL SCREEN ── */
+.panel-illustration {
+  height: 300px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.panel-illustration svg { width: 100%; height: 100%; display: block; }
+
+.panel-content {
+  flex: 1;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.word-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(120deg, var(--pollen) 0%, var(--honey) 100%);
+  border-radius: var(--r-sm);
+  padding: 10px 18px;
+  font-family: 'Baloo 2', cursive;
+  font-size: 24px; font-weight: 800;
+  color: var(--text-dark);
+  box-shadow: 0 3px 12px rgba(244,166,35,0.35);
+  align-self: flex-start;
+  animation: pop 2s ease-in-out infinite;
+  cursor: pointer;
+}
+.word-highlight .slash { font-size: 18px; color: var(--honey-deep); opacity: 0.6; margin: 0 2px; }
+.word-highlight.hidden { display: none; }
+
+.narration {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+.narration em {
+  font-style: normal;
+  color: var(--honey-deep);
+  font-weight: 800;
+  background: rgba(244,166,35,0.15);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.interaction-block {
+  background: var(--sky-blue);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  border: 2px dashed rgba(100,180,220,0.4);
+}
+.interaction-block.hidden { display: none; }
+.interaction-prompt {
+  font-size: 16px; font-weight: 700;
+  color: #1a6080;
+  line-height: 1.4;
+}
+.btn-respond {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+  background: #1a6080;
+  color: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-respond:hover { background: #0f4d66; }
+
+.tap-area {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFF0C2 100%);
+  border-radius: var(--r);
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px dashed rgba(244,166,35,0.4);
+  transition: all 0.3s;
+}
+.tap-area.hidden { display: none; }
+.tap-area:hover { background: linear-gradient(135deg, #FFEFA0 0%, #FFD94A 100%); }
+.tap-area p { font-size: 15px; font-weight: 700; color: var(--honey-deep); }
+
+.tap-revealed {
+  display: none;
+  background: linear-gradient(135deg, #FFD94A 0%, var(--honey) 100%);
+  border-radius: var(--r);
+  padding: 14px;
+  text-align: center;
+  animation: pop 0.4s ease;
+}
+.tap-revealed.show { display: block; }
+.tap-revealed p { font-size: 15px; font-weight: 700; color: var(--text-dark); }
+
+/* ── PANEL NAVIGATION ── */
+.panel-nav {
+  padding: 14px 20px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(45,35,24,0.06);
+}
+.btn-nav {
+  display: flex; align-items: center; gap: 6px;
+  padding: 11px 22px;
+  border-radius: 14px;
+  border: 2px solid rgba(244,166,35,0.3);
+  background: transparent;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--honey-deep);
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-nav:hover { background: var(--honey-pale); border-color: var(--honey); }
+.btn-nav.primary {
+  background: var(--honey);
+  border-color: var(--honey);
+  color: var(--white);
+  box-shadow: 0 3px 10px rgba(212,136,26,0.3);
+}
+.btn-nav.primary:hover { background: var(--honey-deep); }
+.btn-nav:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.panel-counter {
+  font-size: 13px; font-weight: 700;
+  color: var(--text-mid);
+  background: var(--honey-pale);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* ── QUIZ SCREEN ── */
+#quiz {
+  padding: 20px 20px 24px;
+  gap: 16px;
+}
+
+.quiz-header {
+  text-align: center;
+}
+.quiz-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 22px; font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.quiz-mochi-says {
+  font-size: 14px; color: var(--text-mid); margin-bottom: 2px;
+}
+
+.quiz-question-block {
+  background: var(--honey-pale);
+  border-radius: var(--r);
+  padding: 18px;
+  text-align: center;
+}
+.quiz-q-number {
+  font-size: 12px; font-weight: 700; color: var(--honey-deep);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.quiz-q-text {
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px; font-weight: 700;
+  color: var(--text-dark); line-height: 1.4;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.quiz-opt {
+  padding: 14px 12px;
+  border-radius: var(--r-sm);
+  border: 2px solid rgba(45,35,24,0.12);
+  background: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+.quiz-opt:hover:not([disabled]) { border-color: var(--honey); background: var(--honey-pale); }
+.quiz-opt.correct { background: rgba(91,168,90,0.15); border-color: var(--quiz-correct); color: var(--quiz-correct); }
+.quiz-opt.wrong   { background: rgba(232,107,63,0.12); border-color: var(--quiz-wrong); color: var(--quiz-wrong); }
+.quiz-opt[disabled] { cursor: not-allowed; }
+
+.quiz-explanation {
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  font-size: 14px; font-weight: 600;
+  line-height: 1.5;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.quiz-explanation.show { display: block; }
+.quiz-explanation.correct { background: rgba(91,168,90,0.15); color: #2d6b2c; border-left: 4px solid var(--quiz-correct); }
+.quiz-explanation.wrong   { background: rgba(232,107,63,0.1); color: #8a3218; border-left: 4px solid var(--quiz-wrong); }
+
+.quiz-next-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  background: var(--honey);
+  color: var(--white);
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(212,136,26,0.3);
+  transition: all 0.2s;
+  display: none;
+}
+.quiz-next-btn.show { display: block; }
+.quiz-next-btn:hover { background: var(--honey-deep); }
+
+.quiz-score-display {
+  text-align: center;
+  font-size: 13px; color: var(--text-mid);
+}
+
+/* ── END SCREEN ── */
+#end {
+  padding: 28px 24px 32px;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.end-badge {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pollen) 0%, var(--honey) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 52px;
+  box-shadow: 0 6px 24px rgba(212,136,26,0.4);
+  animation: float 3s ease-in-out infinite;
+}
+.end-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 26px; font-weight: 800;
+  color: var(--text-dark);
+}
+.end-subtitle { font-size: 16px; color: var(--text-mid); }
+.words-learned {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+}
+.word-pill {
+  display: flex; flex-direction: column; align-items: center;
+  background: linear-gradient(135deg, var(--honey-pale) 0%, #FEE9A0 100%);
+  border: 2px solid var(--honey);
+  border-radius: 14px;
+  padding: 10px 20px;
+}
+.word-pill .en { font-family: 'Baloo 2', cursive; font-size: 20px; font-weight: 800; color: var(--text-dark); }
+.word-pill .es { font-size: 13px; font-weight: 700; color: var(--honey-deep); }
+
+.end-score {
+  background: var(--honey-pale);
+  border-radius: 16px;
+  padding: 16px 24px;
+  width: 100%;
+}
+.score-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 15px; font-weight: 700; color: var(--text-dark);
+  padding: 4px 0;
+}
+.score-val { color: var(--honey-deep); font-size: 18px; }
+
+.btn-replay {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, var(--honey) 0%, var(--honey-deep) 100%);
+  color: var(--white);
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(212,136,26,0.4);
+  transition: all 0.2s;
+}
+.btn-replay:hover { transform: translateY(-2px); }
+
+/* ── MOCHI FLOAT CHAR ── */
+.mochi-float {
+  position: absolute;
+  top: 18px; right: 18px;
+  animation: float 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── HONEYCOMB BG PATTERN ── */
+.hc-bg {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.04; overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="series-label">🌻 Life in the Hive</div>
+    <div class="progress-dots" id="progress-dots"></div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ COVER ═══════════════ -->
+  <div class="screen active" id="cover">
+    <div class="illustration" style="height:260px; background:#FFF4D6; position:relative; overflow:hidden;">
+      <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+        <!-- Sky gradient using flat tones -->
+        <rect x="0" y="0" width="480" height="180" fill="#FFF4D6"/>
+        <rect x="0" y="160" width="480" height="100" fill="#5BA85A"/>
+        <!-- Rolling hills -->
+        <ellipse cx="130" cy="185" rx="160" ry="55" fill="#4A9349"/>
+        <ellipse cx="380" cy="190" rx="150" ry="50" fill="#4A9349"/>
+        <!-- Sun -->
+        <circle cx="60" cy="55" r="34" fill="#FFD94A"/>
+        <circle cx="60" cy="55" r="26" fill="#F4A623"/>
+        <!-- Sun rays -->
+        <g stroke="#FFD94A" stroke-width="3" stroke-linecap="round" opacity="0.7">
+          <line x1="60" y1="8" x2="60" y2="18"/>
+          <line x1="60" y1="92" x2="60" y2="102"/>
+          <line x1="13" y1="55" x2="23" y2="55"/>
+          <line x1="97" y1="55" x2="107" y2="55"/>
+          <line x1="28" y1="23" x2="35" y2="30"/>
+          <line x1="85" y1="80" x2="92" y2="87"/>
+          <line x1="28" y1="87" x2="35" y2="80"/>
+          <line x1="85" y1="30" x2="92" y2="23"/>
+        </g>
+        <!-- Clouds -->
+        <g fill="white" opacity="0.9">
+          <ellipse cx="200" cy="45" rx="45" ry="20"/>
+          <ellipse cx="175" cy="50" rx="30" ry="18"/>
+          <ellipse cx="225" cy="50" rx="35" ry="17"/>
+          <ellipse cx="360" cy="70" rx="38" ry="16"/>
+          <ellipse cx="338" cy="75" rx="26" ry="14"/>
+          <ellipse cx="388" cy="74" rx="30" ry="14"/>
+        </g>
+        <!-- Wildflowers -->
+        <g>
+          <!-- flower 1 -->
+          <line x1="80" y1="230" x2="80" y2="170" stroke="#3D7A3C" stroke-width="3"/>
+          <circle cx="80" cy="165" r="14" fill="#F4A623"/>
+          <circle cx="80" cy="165" r="7" fill="#7B4F2E"/>
+          <!-- flower 2 -->
+          <line x1="140" y1="240" x2="140" y2="195" stroke="#3D7A3C" stroke-width="3"/>
+          <circle cx="140" cy="190" r="16" fill="#E86B3F"/>
+          <circle cx="140" cy="190" r="7" fill="#7B4F2E"/>
+          <!-- flower 3 -->
+          <line x1="310" y1="245" x2="310" y2="200" stroke="#3D7A3C" stroke-width="2.5"/>
+          <circle cx="310" cy="195" r="13" fill="#F4A623"/>
+          <circle cx="310" cy="195" r="6" fill="#7B4F2E"/>
+          <!-- flower 4 -->
+          <line x1="400" y1="238" x2="400" y2="193" stroke="#3D7A3C" stroke-width="2.5"/>
+          <circle cx="400" cy="188" r="15" fill="#FFD94A"/>
+          <circle cx="400" cy="188" r="6" fill="#7B4F2E"/>
+          <!-- Small grass -->
+          <line x1="260" y1="260" x2="255" y2="238" stroke="#3D7A3C" stroke-width="2"/>
+          <line x1="265" y1="260" x2="270" y2="236" stroke="#3D7A3C" stroke-width="2"/>
+          <line x1="350" y1="260" x2="347" y2="244" stroke="#4A9349" stroke-width="2"/>
+        </g>
+        <!-- MOCHI (large on cover) -->
+        <g transform="translate(310,90)">
+          <!-- Body -->
+          <ellipse cx="0" cy="0" rx="38" ry="44" fill="#F4A623"/>
+          <!-- Stripes -->
+          <path d="M-35,-8 Q0,-6 35,-8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M-36,8 Q0,10 36,8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- Wings -->
+          <ellipse cx="-46" cy="-22" rx="22" ry="12" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(-20,-46,-22)"/>
+          <ellipse cx="46" cy="-22" rx="22" ry="12" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(20,46,-22)"/>
+          <!-- Head -->
+          <circle cx="0" cy="-42" r="28" fill="#F4A623"/>
+          <!-- Straw hat -->
+          <ellipse cx="0" cy="-68" rx="34" ry="7" fill="#D4881A"/>
+          <ellipse cx="0" cy="-68" rx="18" ry="12" fill="#E8A020"/>
+          <!-- Hat flower -->
+          <circle cx="16" cy="-66" r="5" fill="#E86B3F"/>
+          <circle cx="16" cy="-66" r="2.5" fill="#FFD94A"/>
+          <!-- Eyes -->
+          <circle cx="-10" cy="-44" r="9" fill="white"/>
+          <circle cx="10" cy="-44" r="9" fill="white"/>
+          <circle cx="-9" cy="-43" r="5" fill="#2D2318"/>
+          <circle cx="11" cy="-43" r="5" fill="#2D2318"/>
+          <!-- Eye shine -->
+          <circle cx="-7" cy="-45" r="2" fill="white"/>
+          <circle cx="13" cy="-45" r="2" fill="white"/>
+          <!-- Smile -->
+          <path d="M-8,-34 Q0,-28 8,-34" stroke="#7B4F2E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Antennae -->
+          <line x1="-8" y1="-70" x2="-18" y2="-88" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="-20" cy="-90" r="4" fill="#E86B3F"/>
+          <line x1="8" y1="-70" x2="20" y2="-87" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="22" cy="-89" r="4" fill="#E86B3F"/>
+          <!-- Satchel -->
+          <rect x="18" y="-8" width="22" height="18" rx="5" fill="#7B4F2E"/>
+          <rect x="21" y="-5" width="6" height="6" rx="2" fill="#F4A623"/>
+          <!-- Legs (small) -->
+          <line x1="-20" y1="32" x2="-30" y2="50" stroke="#2D2318" stroke-width="2.5"/>
+          <line x1="0" y1="38" x2="0" y2="56" stroke="#2D2318" stroke-width="2.5"/>
+          <line x1="20" y1="32" x2="30" y2="50" stroke="#2D2318" stroke-width="2.5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="cover-text">
+      <div class="cover-title" data-en="Mochi Finds a Flower" data-es="Mochi Encuentra una Flor">Mochi Finds a Flower</div>
+      <div class="cover-subtitle" data-en="A Mochi adventure — 4 panels · 2 words" data-es="Una aventura de Mochi — 4 paneles · 2 palabras">A Mochi adventure — 4 panels · 2 words</div>
+      <div class="cover-meta">
+        <span class="badge">🎒 Ages 6–8</span>
+        <span class="badge">⏱ 2 min</span>
+        <span class="badge">🌿 Bee facts</span>
+      </div>
+      <button class="btn-start" onclick="startStory()">
+        <span data-en="Let's fly! 🐝" data-es="¡A volar! 🐝">Let's fly! 🐝</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PANEL 1 ═══════════════ -->
+  <div class="screen" id="panel-1">
+    <div class="panel-illustration" style="background:#FFF4D6;">
+      <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky -->
+        <rect x="0" y="0" width="480" height="210" fill="#FFF4D6"/>
+        <!-- Grass -->
+        <rect x="0" y="200" width="480" height="100" fill="#5BA85A"/>
+        <ellipse cx="120" cy="215" rx="130" ry="40" fill="#4A9349"/>
+        <ellipse cx="360" cy="220" rx="140" ry="38" fill="#4A9349"/>
+        <!-- Sun -->
+        <circle cx="58" cy="58" r="32" fill="#FFD94A"/>
+        <!-- Clouds -->
+        <g fill="white" opacity="0.92">
+          <ellipse cx="220" cy="50" rx="52" ry="22"/>
+          <ellipse cx="192" cy="57" rx="36" ry="19"/>
+          <ellipse cx="252" cy="56" rx="38" ry="18"/>
+          <ellipse cx="390" cy="80" rx="42" ry="17"/>
+          <ellipse cx="365" cy="85" rx="30" ry="15"/>
+          <ellipse cx="418" cy="84" rx="32" ry="15"/>
+        </g>
+        <!-- Wildflowers in meadow -->
+        <g>
+          <line x1="50" y1="260" x2="50" y2="215" stroke="#3D7A3C" stroke-width="2.5"/>
+          <circle cx="50" cy="210" r="11" fill="#E86B3F"/>
+          <circle cx="50" cy="210" r="5" fill="#7B4F2E"/>
+          <line x1="100" y1="265" x2="100" y2="225" stroke="#3D7A3C" stroke-width="2.5"/>
+          <circle cx="100" cy="220" r="12" fill="#F4A623"/>
+          <circle cx="100" cy="220" r="5" fill="#7B4F2E"/>
+          <line x1="350" y1="260" x2="350" y2="218" stroke="#3D7A3C" stroke-width="2.5"/>
+          <circle cx="350" cy="213" r="11" fill="#FFD94A"/>
+          <circle cx="350" cy="213" r="5" fill="#7B4F2E"/>
+          <line x1="420" y1="255" x2="420" y2="215" stroke="#3D7A3C" stroke-width="2.5"/>
+          <circle cx="420" cy="210" r="13" fill="#E86B3F"/>
+          <circle cx="420" cy="210" r="5.5" fill="#7B4F2E"/>
+        </g>
+        <!-- MOCHI flying small, high -->
+        <g transform="translate(240,120) scale(0.6)">
+          <ellipse cx="0" cy="0" rx="38" ry="44" fill="#F4A623"/>
+          <path d="M-35,-8 Q0,-6 35,-8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M-36,8 Q0,10 36,8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <ellipse cx="-55" cy="-28" rx="28" ry="13" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(-25,-55,-28)"/>
+          <ellipse cx="55" cy="-28" rx="28" ry="13" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(25,55,-28)"/>
+          <circle cx="0" cy="-42" r="28" fill="#F4A623"/>
+          <ellipse cx="0" cy="-68" rx="34" ry="7" fill="#D4881A"/>
+          <ellipse cx="0" cy="-68" rx="18" ry="12" fill="#E8A020"/>
+          <circle cx="14" cy="-66" r="5" fill="#E86B3F"/>
+          <circle cx="-10" cy="-44" r="9" fill="white"/>
+          <circle cx="10" cy="-44" r="9" fill="white"/>
+          <circle cx="-9" cy="-43" r="5" fill="#2D2318"/>
+          <circle cx="11" cy="-43" r="5" fill="#2D2318"/>
+          <circle cx="-7" cy="-45" r="2" fill="white"/>
+          <circle cx="13" cy="-45" r="2" fill="white"/>
+          <path d="M-6,-33 Q0,-28 6,-33" stroke="#7B4F2E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="-8" y1="-70" x2="-18" y2="-86" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="-20" cy="-88" r="4" fill="#E86B3F"/>
+          <line x1="8" y1="-70" x2="20" y2="-85" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="22" cy="-87" r="4" fill="#E86B3F"/>
+        </g>
+        <!-- Motion trail -->
+        <g opacity="0.3" fill="#F4A623">
+          <ellipse cx="178" cy="122" rx="5" ry="4" transform="rotate(-10)"/>
+          <ellipse cx="163" cy="125" rx="3.5" ry="3" transform="rotate(-8)"/>
+          <ellipse cx="150" cy="128" rx="2.5" ry="2" transform="rotate(-6)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="panel-content">
+      <div class="narration" data-en="<em>Bzzzz!</em> I am flying high above the meadow. My wings are going so fast!" data-es="<em>¡Bzzz!</em> Estoy volando alto sobre el prado. ¡Mis alas van muy rápido!">
+        <em>Bzzzz!</em> I am flying high above the meadow. My wings are going so fast!
+      </div>
+      <div class="word-highlight hidden" id="p1-word"></div>
+      <div class="interaction-block hidden" id="p1-interact">
+        <div class="interaction-prompt" data-en="" data-es=""></div>
+        <button class="btn-respond" onclick="respondDone(1)">👏 Done!</button>
+      </div>
+    </div>
+    <div class="panel-nav">
+      <button class="btn-nav" onclick="goTo('cover')" data-en="← Back" data-es="← Atrás">← Back</button>
+      <div class="panel-counter" data-en="Panel 1 of 4" data-es="Panel 1 de 4">Panel 1 of 4</div>
+      <button class="btn-nav primary" onclick="nextPanel(2)" data-en="Next →" data-es="Siguiente →">Next →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PANEL 2 ═══════════════ -->
+  <div class="screen" id="panel-2">
+    <div class="panel-illustration" style="background:#FFF4D6;">
+      <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky -->
+        <rect x="0" y="0" width="480" height="220" fill="#FFF4D6"/>
+        <!-- Ground -->
+        <rect x="0" y="208" width="480" height="92" fill="#5BA85A"/>
+        <ellipse cx="240" cy="215" rx="300" ry="40" fill="#4A9349"/>
+        <!-- BIG SUNFLOWER (hero element) -->
+        <!-- Stem -->
+        <path d="M300,298 Q296,240 300,200" stroke="#3D7A3C" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <!-- Leaf -->
+        <ellipse cx="280" cy="260" rx="22" ry="10" fill="#5BA85A" transform="rotate(-30,280,260)"/>
+        <!-- Petals (16 petals in star pattern) -->
+        <g transform="translate(300,130)">
+          <g fill="#FFD94A" stroke="#F4A623" stroke-width="1">
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(22.5)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(45)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(67.5)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(112.5)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(135)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(157.5)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(202.5)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(225)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(247.5)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(292.5)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(315)"/>
+            <ellipse cx="0" cy="-52" rx="11" ry="22" transform="rotate(337.5)"/>
+          </g>
+          <!-- Center -->
+          <circle cx="0" cy="0" r="36" fill="#7B4F2E"/>
+          <circle cx="0" cy="0" r="28" fill="#5C3822"/>
+          <!-- Seed pattern dots -->
+          <g fill="#F4A623" opacity="0.5">
+            <circle cx="-12" cy="-8" r="2.5"/>
+            <circle cx="0" cy="-14" r="2.5"/>
+            <circle cx="12" cy="-8" r="2.5"/>
+            <circle cx="16" cy="4" r="2.5"/>
+            <circle cx="8" cy="14" r="2.5"/>
+            <circle cx="-8" cy="14" r="2.5"/>
+            <circle cx="-16" cy="4" r="2.5"/>
+          </g>
+        </g>
+        <!-- Word bubble -->
+        <g>
+          <rect x="28" y="28" width="180" height="60" rx="14" fill="#FFD94A" stroke="#F4A623" stroke-width="2"/>
+          <path d="M120,88 L130,105 L108,88Z" fill="#FFD94A"/>
+          <text x="118" y="52" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="22" font-weight="800" fill="#2D2318" class="word-bubble-en">FLOWER!</text>
+          <text x="118" y="52" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="22" font-weight="800" fill="#2D2318" class="word-bubble-es" display="none">¡FLOR!</text>
+          <text x="118" y="72" text-anchor="middle" font-family="Nunito,sans-serif" font-size="14" font-weight="700" fill="#7B4F2E" class="word-bubble-sub-en">una flor 🌻</text>
+          <text x="118" y="72" text-anchor="middle" font-family="Nunito,sans-serif" font-size="14" font-weight="700" fill="#7B4F2E" class="word-bubble-sub-es" display="none">a flower 🌻</text>
+        </g>
+        <!-- MOCHI pointing at flower -->
+        <g transform="translate(155,165) scale(0.55)">
+          <ellipse cx="0" cy="0" rx="38" ry="44" fill="#F4A623"/>
+          <path d="M-35,-8 Q0,-6 35,-8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M-36,8 Q0,10 36,8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- Wing pointing right -->
+          <ellipse cx="55" cy="-10" rx="32" ry="10" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(15,55,-10)"/>
+          <ellipse cx="-48" cy="-28" rx="26" ry="11" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(-25,-48,-28)"/>
+          <!-- Arm pointing -->
+          <path d="M32,20 Q55,8 72,-5" stroke="#2D2318" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="76" cy="-8" r="6" fill="#F4A623" stroke="#2D2318" stroke-width="2"/>
+          <circle cx="0" cy="-42" r="28" fill="#F4A623"/>
+          <ellipse cx="0" cy="-68" rx="34" ry="7" fill="#D4881A"/>
+          <ellipse cx="0" cy="-68" rx="18" ry="12" fill="#E8A020"/>
+          <circle cx="14" cy="-66" r="5" fill="#E86B3F"/>
+          <circle cx="-10" cy="-44" r="9" fill="white"/>
+          <circle cx="10" cy="-44" r="9" fill="white"/>
+          <circle cx="-8" cy="-42" r="6" fill="#2D2318"/>
+          <circle cx="12" cy="-42" r="6" fill="#2D2318"/>
+          <circle cx="-6" cy="-44" r="2" fill="white"/>
+          <circle cx="14" cy="-44" r="2" fill="white"/>
+          <!-- Excited big eyes -->
+          <path d="M-9,-32 Q0,-26 9,-32" stroke="#7B4F2E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="-8" y1="-70" x2="-18" y2="-87" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="-20" cy="-89" r="4" fill="#E86B3F"/>
+          <line x1="8" y1="-70" x2="20" y2="-85" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="22" cy="-87" r="4" fill="#E86B3F"/>
+        </g>
+        <!-- Sparkle dots near flower -->
+        <g fill="#FFD94A" opacity="0.8">
+          <circle cx="252" cy="105" r="4"/>
+          <circle cx="265" cy="118" r="3"/>
+          <circle cx="246" cy="125" r="2.5"/>
+          <circle cx="260" cy="95" r="2"/>
+        </g>
+      </svg>
+    </div>
+    <div class="panel-content">
+      <div class="word-highlight" data-en="flower 🌻" data-es="flor 🌻">
+        flower <span class="slash">/</span> flor 🌻
+      </div>
+      <div class="narration" data-en="Oh! What is that yellow thing? It is a <em>FLOWER</em>! Una <em>flor</em>!" data-es="¡Oh! ¿Qué es esa cosa amarilla? ¡Es una <em>FLOR</em>! A <em>flower</em>!">
+        Oh! What is that yellow thing? It is a <em>FLOWER</em>! Una <em>flor</em>!
+      </div>
+    </div>
+    <div class="panel-nav">
+      <button class="btn-nav" onclick="nextPanel(1)" data-en="← Back" data-es="← Atrás">← Back</button>
+      <div class="panel-counter" data-en="Panel 2 of 4" data-es="Panel 2 de 4">Panel 2 of 4</div>
+      <button class="btn-nav primary" onclick="nextPanel(3)" data-en="Next →" data-es="Siguiente →">Next →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PANEL 3 ═══════════════ -->
+  <div class="screen" id="panel-3">
+    <div class="panel-illustration" style="background:#FFF4D6;">
+      <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky background -->
+        <rect x="0" y="0" width="480" height="300" fill="#FFF4D6"/>
+        <!-- Large sunflower closeup - petals fill the frame -->
+        <g transform="translate(240,170)">
+          <g fill="#FFD94A" stroke="#F4A623" stroke-width="1">
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(22.5)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(45)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(67.5)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(112.5)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(135)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(157.5)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(202.5)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(225)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(247.5)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(292.5)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(315)"/>
+            <ellipse cx="0" cy="-88" rx="18" ry="38" transform="rotate(337.5)"/>
+          </g>
+          <!-- Center -->
+          <circle cx="0" cy="0" r="58" fill="#7B4F2E"/>
+          <circle cx="0" cy="0" r="48" fill="#5C3822"/>
+          <g fill="#F4A623" opacity="0.4">
+            <circle cx="-20" cy="-12" r="3.5"/>
+            <circle cx="0" cy="-22" r="3.5"/>
+            <circle cx="20" cy="-12" r="3.5"/>
+            <circle cx="24" cy="8" r="3.5"/>
+            <circle cx="12" cy="22" r="3.5"/>
+            <circle cx="-12" cy="22" r="3.5"/>
+            <circle cx="-24" cy="8" r="3.5"/>
+          </g>
+        </g>
+        <!-- MOCHI sitting on flower, large, looking at viewer -->
+        <g transform="translate(240,120) scale(0.75)">
+          <ellipse cx="0" cy="0" rx="38" ry="44" fill="#F4A623"/>
+          <path d="M-35,-8 Q0,-6 35,-8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M-36,8 Q0,10 36,8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- Wings up -->
+          <ellipse cx="-52" cy="-32" rx="26" ry="12" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(-30,-52,-32)"/>
+          <ellipse cx="52" cy="-32" rx="26" ry="12" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(30,52,-32)"/>
+          <!-- Arm/wing pointing outward toward viewer -->
+          <path d="M35,15 Q55,5 68,-2" stroke="#2D2318" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="71" cy="-4" r="6" fill="#F4A623" stroke="#2D2318" stroke-width="2"/>
+          <circle cx="0" cy="-42" r="28" fill="#F4A623"/>
+          <ellipse cx="0" cy="-68" rx="34" ry="7" fill="#D4881A"/>
+          <ellipse cx="0" cy="-68" rx="18" ry="12" fill="#E8A020"/>
+          <circle cx="14" cy="-66" r="5" fill="#E86B3F"/>
+          <!-- VERY big eyes looking forward -->
+          <circle cx="-11" cy="-44" r="11" fill="white"/>
+          <circle cx="11" cy="-44" r="11" fill="white"/>
+          <circle cx="-10" cy="-43" r="7" fill="#2D2318"/>
+          <circle cx="12" cy="-43" r="7" fill="#2D2318"/>
+          <circle cx="-7" cy="-46" r="2.5" fill="white"/>
+          <circle cx="15" cy="-46" r="2.5" fill="white"/>
+          <path d="M-8,-33 Q0,-26 8,-33" stroke="#7B4F2E" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <line x1="-8" y1="-70" x2="-18" y2="-88" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="-20" cy="-90" r="4" fill="#E86B3F"/>
+          <line x1="8" y1="-70" x2="20" y2="-87" stroke="#2D2318" stroke-width="2.5"/>
+          <circle cx="22" cy="-89" r="4" fill="#E86B3F"/>
+        </g>
+        <!-- "Say it!" bubble -->
+        <g opacity="0.95">
+          <rect x="310" y="20" width="148" height="54" rx="12" fill="#B8E4F5" stroke="#87CEEB" stroke-width="2"/>
+          <path d="M310,50 L295,62 L320,50Z" fill="#B8E4F5"/>
+          <text x="384" y="44" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="14" font-weight="800" fill="#1a6080" class="say-it-en">Can you say it?</text>
+          <text x="384" y="44" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="14" font-weight="800" fill="#1a6080" class="say-it-es" display="none">¿Puedes decirlo?</text>
+          <text x="384" y="62" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="18" font-weight="800" fill="#2D2318" class="say-it-word-en">🌻 FLOWER!</text>
+          <text x="384" y="62" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="18" font-weight="800" fill="#2D2318" class="say-it-word-es" display="none">🌻 ¡FLOR!</text>
+        </g>
+      </svg>
+    </div>
+    <div class="panel-content">
+      <div class="word-highlight" data-en="FLOWER 🌻" data-es="FLOR 🌻">
+        FLOWER <span class="slash">/</span> FLOR 🌻
+      </div>
+      <div class="narration" data-en="I am landing on the <em>flower</em> — can YOU say it? Say: <em>flower</em>! <em>Flor</em>!" data-es="Aterrizo en la <em>flor</em> — ¿PUEDES decirlo tú? ¡Di: <em>flor</em>! <em>Flower</em>!">
+        I am landing on the <em>flower</em> — can YOU say it? Say: <em>flower</em>! <em>Flor</em>!
+      </div>
+      <div class="interaction-block" id="p3-interact">
+        <div class="interaction-prompt" data-en="🎤 Say it out loud — FLOWER!" data-es="🎤 ¡Dilo en voz alta — FLOR!">
+          🎤 Say it out loud — FLOWER!
+        </div>
+        <button class="btn-respond" onclick="respondDone(3)" data-en="✅ I said it!" data-es="✅ ¡Lo dije!">
+          ✅ I said it!
+        </button>
+      </div>
+    </div>
+    <div class="panel-nav">
+      <button class="btn-nav" onclick="nextPanel(2)" data-en="← Back" data-es="← Atrás">← Back</button>
+      <div class="panel-counter" data-en="Panel 3 of 4" data-es="Panel 3 de 4">Panel 3 of 4</div>
+      <button class="btn-nav primary" id="p3-next" onclick="nextPanel(4)" disabled data-en="Next →" data-es="Siguiente →">Next →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PANEL 4 ═══════════════ -->
+  <div class="screen" id="panel-4">
+    <div class="panel-illustration" style="background:#FFF4D6;">
+      <svg viewBox="0 0 480 300" id="p4-svg" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky -->
+        <rect x="0" y="0" width="480" height="300" fill="#FFF4D6"/>
+        <!-- Sunflower petals (soft, behind Mochi) -->
+        <g transform="translate(240,220)" opacity="0.7">
+          <g fill="#FFD94A" stroke="#F4A623" stroke-width="1">
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(45)"/>
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(135)"/>
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(225)"/>
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-80" rx="16" ry="34" transform="rotate(315)"/>
+          </g>
+          <circle cx="0" cy="0" r="48" fill="#7B4F2E"/>
+          <circle cx="0" cy="0" r="38" fill="#5C3822"/>
+        </g>
+        <!-- MOCHI dancing, pollen on legs -->
+        <g transform="translate(240,140) scale(0.82)">
+          <!-- Body (tilted, dancing) -->
+          <g transform="rotate(12)">
+            <ellipse cx="0" cy="0" rx="38" ry="44" fill="#F4A623"/>
+            <path d="M-35,-8 Q0,-6 35,-8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <path d="M-36,8 Q0,10 36,8" stroke="#2D2318" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <!-- Wings spread wide -->
+            <ellipse cx="-58" cy="-35" rx="30" ry="12" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(-35,-58,-35)"/>
+            <ellipse cx="58" cy="-25" rx="30" ry="12" fill="rgba(200,235,255,0.85)" stroke="#B8E4F5" stroke-width="1.5" transform="rotate(25,58,-25)"/>
+            <circle cx="0" cy="-42" r="28" fill="#F4A623"/>
+            <ellipse cx="0" cy="-68" rx="34" ry="7" fill="#D4881A"/>
+            <ellipse cx="0" cy="-68" rx="18" ry="12" fill="#E8A020"/>
+            <circle cx="14" cy="-66" r="5" fill="#E86B3F"/>
+            <circle cx="-10" cy="-44" r="9" fill="white"/>
+            <circle cx="10" cy="-44" r="9" fill="white"/>
+            <circle cx="-9" cy="-43" r="5" fill="#2D2318"/>
+            <circle cx="11" cy="-43" r="5" fill="#2D2318"/>
+            <circle cx="-7" cy="-45" r="2" fill="white"/>
+            <circle cx="13" cy="-45" r="2" fill="white"/>
+            <!-- Big happy smile -->
+            <path d="M-10,-32 Q0,-22 10,-32" stroke="#7B4F2E" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Rosy cheeks -->
+            <ellipse cx="-16" cy="-36" rx="6" ry="4" fill="#E86B3F" opacity="0.4"/>
+            <ellipse cx="16" cy="-36" rx="6" ry="4" fill="#E86B3F" opacity="0.4"/>
+            <line x1="-8" y1="-70" x2="-18" y2="-87" stroke="#2D2318" stroke-width="2.5"/>
+            <circle cx="-20" cy="-89" r="4" fill="#E86B3F"/>
+            <line x1="8" y1="-70" x2="20" y2="-85" stroke="#2D2318" stroke-width="2.5"/>
+            <circle cx="22" cy="-87" r="4" fill="#E86B3F"/>
+            <!-- LEGS WITH POLLEN BASKETS -->
+            <line x1="-18" y1="36" x2="-28" y2="60" stroke="#2D2318" stroke-width="3"/>
+            <line x1="0" y1="42" x2="0" y2="66" stroke="#2D2318" stroke-width="3"/>
+            <line x1="18" y1="36" x2="28" y2="60" stroke="#2D2318" stroke-width="3"/>
+            <!-- POLLEN BALLS on legs (golden, bright) -->
+            <circle cx="-30" cy="64" r="10" fill="#FFD94A" stroke="#F4A623" stroke-width="2"/>
+            <circle cx="0" cy="69" r="9" fill="#FFD94A" stroke="#F4A623" stroke-width="2"/>
+            <circle cx="30" cy="64" r="9" fill="#FFD94A" stroke="#F4A623" stroke-width="2"/>
+          </g>
+        </g>
+        <!-- POLLEN sparkles (hidden initially, shown on tap) -->
+        <g id="pollen-sparkles" opacity="0">
+          <circle cx="160" cy="80" r="6" fill="#FFD94A"/>
+          <circle cx="340" cy="60" r="8" fill="#F4A623"/>
+          <circle cx="120" cy="140" r="5" fill="#FFD94A"/>
+          <circle cx="380" cy="120" r="7" fill="#F4A623"/>
+          <circle cx="200" cy="50" r="5" fill="#FFD94A"/>
+          <circle cx="310" cy="90" r="6" fill="#F4A623"/>
+          <circle cx="150" cy="200" r="4" fill="#FFD94A"/>
+          <circle cx="370" cy="200" r="5" fill="#F4A623"/>
+          <!-- sparkle stars -->
+          <text x="145" y="92" font-size="18" fill="#FFD94A">✦</text>
+          <text x="315" y="52" font-size="16" fill="#F4A623">✦</text>
+          <text x="360" y="165" font-size="14" fill="#FFD94A">✦</text>
+        </g>
+        <!-- "POLLEN" label bubble -->
+        <g id="pollen-label" opacity="0">
+          <rect x="28" y="30" width="170" height="58" rx="14" fill="#FFD94A" stroke="#F4A623" stroke-width="2"/>
+          <path d="M113,88 L100,105 L126,88Z" fill="#FFD94A"/>
+          <text x="113" y="54" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="20" font-weight="800" fill="#2D2318" class="pollen-word-en">POLLEN! 🌼</text>
+          <text x="113" y="54" text-anchor="middle" font-family="'Baloo 2',cursive" font-size="20" font-weight="800" fill="#2D2318" class="pollen-word-es" display="none">¡POLEN! 🌼</text>
+          <text x="113" y="74" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="700" fill="#7B4F2E" class="pollen-sub-en">= polen en español</text>
+          <text x="113" y="74" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="700" fill="#7B4F2E" class="pollen-sub-es" display="none">= pollen in English</text>
+        </g>
+      </svg>
+    </div>
+    <div class="panel-content">
+      <div class="tap-area" id="p4-tap" onclick="revealPollen()">
+        <p data-en="👇 Tap Mochi's legs to see the pollen!" data-es="👇 ¡Toca las patas de Mochi para ver el polen!">
+          👇 Tap Mochi's legs to see the pollen!
+        </p>
+      </div>
+      <div class="tap-revealed" id="p4-revealed">
+        <p data-en="✨ Golden POLLEN — Polen in Spanish! Mochi carries it back to the hive. She's a superstar! 🐝" data-es="✨ ¡POLLEN dorado — Polen en español! Mochi lo lleva de vuelta a la colmena. ¡Es una superestrella! 🐝">
+          ✨ Golden POLLEN — Polen in Spanish! Mochi carries it back to the hive. She's a superstar! 🐝
+        </p>
+      </div>
+      <div class="narration" id="p4-narration" style="display:none" data-en="This <em>flower</em> gives me golden <em>POLLEN</em> — <em>Polen</em>! I carry it back to the hive!" data-es="¡Esta <em>flor</em> me da <em>POLLEN</em> dorado — <em>Polen</em>! ¡Lo llevo de vuelta a la colmena!">
+        This <em>flower</em> gives me golden <em>POLLEN</em> — <em>Polen</em>! I carry it back to the hive!
+      </div>
+    </div>
+    <div class="panel-nav">
+      <button class="btn-nav" onclick="nextPanel(3)" data-en="← Back" data-es="← Atrás">← Back</button>
+      <div class="panel-counter" data-en="Panel 4 of 4" data-es="Panel 4 de 4">Panel 4 of 4</div>
+      <button class="btn-nav primary" id="p4-next" onclick="goToQuiz()" disabled data-en="Quiz time! 🌻" data-es="¡Quiz! 🌻">Quiz time! 🌻</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ QUIZ ═══════════════ -->
+  <div class="screen" id="quiz" style="flex-direction:column;">
+    <div class="quiz-header">
+      <div class="quiz-title" data-en="Quick Quiz! 🐝" data-es="¡Quiz rápido! 🐝">Quick Quiz! 🐝</div>
+      <div class="quiz-mochi-says" data-en="Mochi says: let's see what you remember!" data-es="Mochi dice: ¡a ver qué recuerdas!">Mochi says: let's see what you remember!</div>
+    </div>
+    <div class="quiz-score-display" id="quiz-score-display">Question 1 of 3 · Score: 0</div>
+    <div class="quiz-question-block">
+      <div class="quiz-q-number" id="quiz-q-num">Question 1 of 3</div>
+      <div class="quiz-q-text" id="quiz-q-text">Loading...</div>
+    </div>
+    <div class="quiz-options" id="quiz-options"></div>
+    <div class="quiz-explanation" id="quiz-explanation"></div>
+    <button class="quiz-next-btn" id="quiz-next-btn" onclick="nextQuestion()">Next →</button>
+  </div>
+
+  <!-- ═══════════════ END ═══════════════ -->
+  <div class="screen" id="end">
+    <div class="end-badge">🌻</div>
+    <div class="end-title" data-en="Amazing work, explorer! 🎉" data-es="¡Trabajo increíble, explorador! 🎉">Amazing work, explorer! 🎉</div>
+    <div class="end-subtitle" data-en="You learned 2 new words today with Mochi:" data-es="¡Aprendiste 2 palabras nuevas hoy con Mochi:">You learned 2 new words today with Mochi:</div>
+    <div class="words-learned">
+      <div class="word-pill">
+        <span class="en">flower</span>
+        <span class="es">= flor</span>
+      </div>
+      <div class="word-pill">
+        <span class="en">pollen</span>
+        <span class="es">= polen</span>
+      </div>
+    </div>
+    <div class="end-score" id="end-score-block">
+      <div class="score-row"><span data-en="Quiz score:" data-es="Puntuación:">Quiz score:</span> <span class="score-val" id="final-score-val">0/3</span></div>
+      <div class="score-row"><span data-en="Words discovered:" data-es="Palabras descubiertas:">Words discovered:</span> <span class="score-val">2</span></div>
+      <div class="score-row"><span data-en="Bee fact level:" data-es="Nivel abeja:">Bee fact level:</span> <span class="score-val" id="bee-level">Explorer 🔍</span></div>
+    </div>
+    <div style="font-size:14px;color:var(--text-mid);text-align:center;line-height:1.6;padding:0 8px" data-en="🐝 Fun bee fact: A single bee visits up to 1,500 flowers in one day — all to collect pollen and nectar for the hive!" data-es="🐝 Dato abeja: ¡Una sola abeja visita hasta 1.500 flores en un día — ¡todo para recoger polen y néctar para la colmena!">
+      🐝 Fun bee fact: A single bee visits up to 1,500 flowers in one day — all to collect pollen and nectar for the hive!
+    </div>
+    <button class="btn-replay" onclick="restart()" data-en="🔁 Play again" data-es="🔁 Jugar de nuevo">🔁 Play again</button>
+  </div>
+
+</div>
+
+<script>
+var lang = 'en';
+var quizScore = 0;
+var currentQ = 0;
+var pollenRevealed = false;
+var p3done = false;
+
+var questions = [
+  {
+    en: { q: 'Which one is a flower? 🌻', opts: ['flower 🌻','hive 🏠','pollen ✨','wing 🪁'], ans: 'flower 🌻', expl: 'Yes! That\'s a flower — flor in Spanish. Bees love flowers!' },
+    es: { q: '¿Cuál es una flor? 🌻', opts: ['flor 🌻','colmena 🏠','polen ✨','ala 🪁'], ans: 'flor 🌻', expl: '¡Sí! Eso es una flor — flower en inglés. ¡Las abejas adoran las flores!' }
+  },
+  {
+    en: { q: 'What is the Spanish word for FLOWER?', opts: ['miel','flor','abeja','colmena'], ans: 'flor', expl: 'Flower = Flor! They even sound a little similar!' },
+    es: { q: '¿Cómo se dice FLOWER en español?', opts: ['miel','flor','abeja','colmena'], ans: 'flor', expl: '¡Flower = Flor! ¡Hasta suenan un poco parecidas!' }
+  },
+  {
+    en: { q: 'Mochi collects pollen from flowers. True or False?', opts: ['True ✅','False ❌'], ans: 'True ✅', expl: 'TRUE! Bees collect pollen and carry it back to the hive. That\'s their superpower!' },
+    es: { q: 'Mochi recoge polen de las flores. ¿Verdadero o Falso?', opts: ['Verdadero ✅','Falso ❌'], ans: 'Verdadero ✅', expl: '¡VERDADERO! Las abejas recogen polen y lo llevan a la colmena. ¡Es su superpoder!' }
+  }
+];
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === l.toUpperCase()));
+  refreshLangAll();
+}
+
+function refreshLangAll() {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    var val = el.getAttribute('data-' + lang);
+    if (val !== null) {
+      if (el.tagName === 'BUTTON' || el.classList.contains('narration') || el.tagName === 'P') {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
+    }
+  });
+  // SVG bilingual elements
+  var enEls = document.querySelectorAll('.word-bubble-en,.word-bubble-sub-en,.say-it-en,.say-it-word-en,.pollen-word-en,.pollen-sub-en');
+  var esEls = document.querySelectorAll('.word-bubble-es,.word-bubble-sub-es,.say-it-es,.say-it-word-es,.pollen-word-es,.pollen-sub-es');
+  enEls.forEach(el => el.setAttribute('display', lang === 'en' ? '' : 'none'));
+  esEls.forEach(el => el.setAttribute('display', lang === 'es' ? '' : 'none'));
+}
+
+function buildProgressDots(currentPanel) {
+  var el = document.getElementById('progress-dots');
+  var total = 4;
+  var html = '';
+  for (var i = 1; i <= total; i++) {
+    if (i < currentPanel) html += '<div class="dot done"></div>';
+    else if (i === currentPanel) html += '<div class="dot active"></div>';
+    else html += '<div class="dot"></div>';
+  }
+  el.innerHTML = html;
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  var s = document.getElementById(id);
+  if (s) s.classList.add('active');
+}
+
+function startStory() {
+  showScreen('panel-1');
+  buildProgressDots(1);
+}
+
+function nextPanel(n) {
+  if (n >= 1 && n <= 4) {
+    showScreen('panel-' + n);
+    buildProgressDots(n);
+    if(window.syncPanelView) window.syncPanelView(n);
+  }
+}
+
+function respondDone(panelNum) {
+  if (panelNum === 3) {
+    p3done = true;
+    var btn = document.getElementById('p3-next');
+    if (btn) { btn.disabled = false; }
+    var block = document.getElementById('p3-interact');
+    if (block) {
+      block.style.background = 'rgba(91,168,90,0.15)';
+      block.style.borderColor = 'rgba(91,168,90,0.4)';
+      var prompt = block.querySelector('.interaction-prompt');
+      if (prompt) prompt.innerHTML = (lang === 'es') ? '✅ ¡Muy bien! ¡La dijiste!' : '✅ Well done! You said it!';
+    }
+  }
+}
+
+function revealPollen() {
+  pollenRevealed = true;
+  document.getElementById('p4-tap').classList.add('hidden');
+  document.getElementById('p4-revealed').classList.add('show');
+  document.getElementById('p4-narration').style.display = 'block';
+  document.getElementById('p4-next').disabled = false;
+  // Animate SVG pollen sparkles
+  var sparkles = document.getElementById('pollen-sparkles');
+  var label = document.getElementById('pollen-label');
+  if (sparkles) {
+    sparkles.style.transition = 'opacity 0.6s ease';
+    sparkles.style.opacity = '1';
+  }
+  if (label) {
+    label.style.transition = 'opacity 0.6s ease';
+    label.style.opacity = '1';
+  }
+  refreshLangAll();
+}
+
+function goToQuiz() {
+  currentQ = 0;
+  quizScore = 0;
+  showScreen('quiz');
+  buildProgressDots(4);
+  renderQuestion();
+}
+
+function renderQuestion() {
+  var q = questions[currentQ][lang];
+  document.getElementById('quiz-q-num').textContent = 'Question ' + (currentQ+1) + ' of 3';
+  document.getElementById('quiz-q-text').textContent = q.q;
+  document.getElementById('quiz-score-display').textContent = 'Question ' + (currentQ+1) + ' of 3 · Score: ' + quizScore;
+  var optsEl = document.getElementById('quiz-options');
+  optsEl.innerHTML = '';
+  var cols = q.opts.length === 2 ? '1fr' : '1fr 1fr';
+  optsEl.style.gridTemplateColumns = cols;
+  q.opts.forEach(function(opt) {
+    var btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = opt;
+    btn.onclick = function() { checkAnswer(opt, q.ans, q.expl, btn); };
+    optsEl.appendChild(btn);
+  });
+  document.getElementById('quiz-explanation').className = 'quiz-explanation';
+  document.getElementById('quiz-explanation').textContent = '';
+  document.getElementById('quiz-next-btn').className = 'quiz-next-btn';
+}
+
+function checkAnswer(choice, correct, expl, btn) {
+  document.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = true; });
+  var isCorrect = (choice === correct);
+  btn.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    document.querySelectorAll('.quiz-opt').forEach(b => {
+      if (b.textContent === correct) b.classList.add('correct');
+    });
+  }
+  if (isCorrect) quizScore++;
+  var exEl = document.getElementById('quiz-explanation');
+  exEl.className = 'quiz-explanation show ' + (isCorrect ? 'correct' : 'wrong');
+  exEl.textContent = (isCorrect ? '🎉 ' : '💡 ') + expl;
+  document.getElementById('quiz-next-btn').className = 'quiz-next-btn show';
+  document.getElementById('quiz-score-display').textContent = 'Question ' + (currentQ+1) + ' of 3 · Score: ' + quizScore;
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= questions.length) {
+    showEnd();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showEnd() {
+  showScreen('end');
+  document.getElementById('final-score-val').textContent = quizScore + '/3';
+  if(window.syncQuizResult) window.syncQuizResult(quizScore, questions.length);
+  if(window.syncWordSeen){window.syncWordSeen("flower","flor",quizScore>0);window.syncWordSeen("pollen","polen",quizScore>1);}
+  var level = quizScore === 3 ? 'Bee Master 🏆' : quizScore >= 2 ? 'Pollen Pro 🌻' : 'Explorer 🔍';
+  var levelEs = quizScore === 3 ? '¡Maestra Abeja! 🏆' : quizScore >= 2 ? 'Pro del Polen 🌻' : 'Exploradora 🔍';
+  document.getElementById('bee-level').textContent = (lang === 'es') ? levelEs : level;
+  refreshLangAll();
+}
+
+function restart() {
+  quizScore = 0; currentQ = 0; pollenRevealed = false; p3done = false;
+  // Reset panel 3
+  var p3next = document.getElementById('p3-next');
+  if (p3next) p3next.disabled = true;
+  var p3interact = document.getElementById('p3-interact');
+  if (p3interact) {
+    p3interact.style.background = '';
+    p3interact.style.borderColor = '';
+    var prompt = p3interact.querySelector('.interaction-prompt');
+    if (prompt) prompt.innerHTML = (lang === 'es') ? '🎤 ¡Dilo en voz alta — FLOR!' : '🎤 Say it out loud — FLOWER!';
+  }
+  // Reset panel 4
+  var p4tap = document.getElementById('p4-tap');
+  var p4rev = document.getElementById('p4-revealed');
+  var p4narr = document.getElementById('p4-narration');
+  var p4next = document.getElementById('p4-next');
+  if (p4tap) p4tap.classList.remove('hidden');
+  if (p4rev) p4rev.classList.remove('show');
+  if (p4narr) p4narr.style.display = 'none';
+  if (p4next) p4next.disabled = true;
+  var sparkles = document.getElementById('pollen-sparkles');
+  var label = document.getElementById('pollen-label');
+  if (sparkles) sparkles.style.opacity = '0';
+  if (label) label.style.opacity = '0';
+  buildProgressDots(0);
+  showScreen('cover');
+}
+
+// Init
+refreshLangAll();
+buildProgressDots(0);
+</script>
+<script>
+(function(){
+var SUPA="https://zrdywdregcrykmbiytvl.supabase.co";
+var KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpyZHl3ZHJlZ2NyeWttYml5dHZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3MzcyNzQsImV4cCI6MjA2OTMxMzI3NH0.6FgluqbBlAYoUCUZXkCdB1-pGU554L-6bkjjhDuqJfg";
+var token=localStorage.getItem("mochi-session")||(function(){var t="s"+Date.now();localStorage.setItem("mochi-session",t);return t;})();
+var sessionId=null;
+function post(path,body){fetch(SUPA+path,{method:"POST",headers:{"Content-Type":"application/json",apikey:KEY,Authorization:"Bearer "+KEY,Prefer:"return=representation"},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(d){if(d&&d[0]&&d[0].id)sessionId=d[0].id;}).catch(function(){});}
+function patch(body){if(!sessionId)return;fetch(SUPA+"/rest/v1/learning_sessions?id=eq."+sessionId,{method:"PATCH",headers:{"Content-Type":"application/json",apikey:KEY,Authorization:"Bearer "+KEY},body:JSON.stringify(body)}).catch(function(){});}
+post("/rest/v1/learning_sessions",{session_token:token,language:"en",started_at:new Date().toISOString(),metadata:{storycard:"mochi-finds-a-flower"}});
+window.syncPanelView=function(n){patch({panels_viewed:n,completion_pct:Math.round(n/4*100)});};
+window.syncQuizResult=function(correct,total){patch({correct_answers:correct,total_questions:total,score:Math.round(correct/total*100),completed_at:new Date().toISOString(),completion_pct:100});};
+window.syncWordSeen=function(en,es,correct){fetch(SUPA+"/rest/v1/user_word_progress",{method:"POST",headers:{"Content-Type":"application/json",apikey:KEY,Authorization:"Bearer "+KEY,Prefer:"resolution=merge-duplicates"},body:JSON.stringify({session_token:token,word_en:en,word_es:es,times_seen:1,times_correct:correct?1:0,last_seen_at:new Date().toISOString(),mastery_level:correct?1:0})}).catch(function(){});};
+if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js").catch(function(){});
+})();
+</script>
+</body>
+</html>

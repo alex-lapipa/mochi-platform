@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mochi de los Huertos 🐝</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --honey: #F4A623; --honey-deep: #D4881A; --honey-pale: #FEF3DC;
+  --pollen: #FFD94A; --meadow: #5BA85A; --sky: #FFF4D6;
+  --earth: #7B4F2E; --earth-pale: #F2E4D1;
+  --white: #FFFEF8; --text-dark: #2D2318; --text-mid: #5C4A30;
+  --coral: #E86B3F; --sky-blue: #B8E4F5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--earth-pale);min-height:100vh;padding:16px}
+.header{text-align:center;padding:28px 20px 20px;background:var(--sky);border-radius:24px;margin-bottom:20px;position:relative;overflow:hidden}
+.header h1{font-family:'Baloo 2',cursive;font-size:32px;font-weight:800;color:var(--text-dark);margin-bottom:4px}
+.header p{font-size:16px;color:var(--text-mid);font-weight:600}
+.badge-row{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.badge{background:var(--honey-pale);border:1px solid rgba(244,166,35,0.3);border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700;color:var(--honey-deep)}
+.status-bar{display:flex;align-items:center;gap:8px;background:var(--white);border-radius:12px;padding:10px 16px;margin-bottom:20px;font-size:13px;color:var(--text-mid);font-weight:600}
+.dot-online{width:8px;height:8px;border-radius:50%;background:var(--meadow);flex-shrink:0}
+.dot-offline{width:8px;height:8px;border-radius:50%;background:var(--coral);flex-shrink:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+@media(max-width:480px){.grid{grid-template-columns:1fr}}
+.card{background:var(--white);border-radius:20px;padding:20px;cursor:pointer;transition:all .2s;border:2px solid transparent;text-decoration:none;display:block}
+.card:hover{transform:translateY(-3px);border-color:var(--honey);box-shadow:0 6px 20px rgba(212,136,26,0.2)}
+.card.locked{opacity:0.5;cursor:default}
+.card:hover.locked{transform:none;border-color:transparent;box-shadow:none}
+.card-icon{font-size:40px;margin-bottom:10px;display:block}
+.card-title{font-family:'Baloo 2',cursive;font-size:18px;font-weight:800;color:var(--text-dark);margin-bottom:4px}
+.card-sub{font-size:13px;color:var(--text-mid);font-weight:600;margin-bottom:10px;line-height:1.4}
+.card-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px}
+.tag-live{background:rgba(91,168,90,0.15);color:var(--meadow)}
+.tag-soon{background:rgba(244,166,35,0.15);color:var(--honey-deep)}
+.tag-pillar{background:var(--honey-pale);color:var(--honey-deep)}
+.progress-row{display:flex;align-items:center;gap:8px;margin-top:10px}
+.progress-bar{flex:1;height:6px;background:rgba(244,166,35,0.15);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--honey);border-radius:3px;transition:width .5s}
+.progress-label{font-size:11px;font-weight:700;color:var(--honey-deep);min-width:28px;text-align:right}
+.section-title{font-family:'Baloo 2',cursive;font-size:15px;font-weight:800;color:var(--text-mid);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.fact-block{background:var(--white);border-radius:16px;padding:16px 20px;margin-bottom:20px;border-left:4px solid var(--honey)}
+.fact-text{font-size:15px;color:var(--text-dark);font-weight:600;line-height:1.6}
+.footer{text-align:center;font-size:12px;color:var(--text-mid);padding:16px 0 8px}
+.loading{text-align:center;padding:40px;font-size:20px;color:var(--honey-deep);font-family:'Baloo 2',cursive}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div style="font-size:52px;margin-bottom:8px">🐝</div>
+  <h1>Mochi de los Huertos</h1>
+  <p>The bee who teaches you about bees, gardens, and the world!</p>
+  <div class="badge-row">
+    <span class="badge">🎒 Ages 6–8</span>
+    <span class="badge">🌍 EN / ES</span>
+    <span class="badge">🌱 Nature learning</span>
+    <span class="badge" id="cards-badge">66 words to discover</span>
+  </div>
+</div>
+
+<div class="status-bar" id="status-bar">
+  <div class="dot-online" id="status-dot"></div>
+  <span id="status-text">Connecting to the hive…</span>
+</div>
+
+<div id="fact-container">
+  <div class="fact-block">
+    <div class="fact-text">🐝 Did you know? Bees beat their wings about 200 times every second — that's what makes the buzz!</div>
+  </div>
+</div>
+
+<div class="section-title">Choose your adventure</div>
+<div class="grid" id="modules-grid">
+  <div class="loading">Bzzzz… loading adventures…</div>
+</div>
+
+<div class="section-title">Words you've discovered</div>
+<div style="background:var(--white);border-radius:16px;padding:16px 20px;margin-bottom:20px">
+  <div class="progress-row">
+    <span style="font-size:13px;font-weight:700;color:var(--text-mid);min-width:100px">flower / flor</span>
+    <div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div>
+    <span class="progress-label">pro</span>
+  </div>
+  <div class="progress-row" style="margin-top:8px">
+    <span style="font-size:13px;font-weight:700;color:var(--text-mid);min-width:100px">pollen / polen</span>
+    <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+    <span class="progress-label">new</span>
+  </div>
+  <div id="more-words"></div>
+  <div style="margin-top:12px;font-size:13px;color:var(--text-mid);font-weight:600" id="total-words">2 words discovered • 64 more waiting in the hive!</div>
+</div>
+
+<div class="footer">mochinillo.com · LA PIPA IS LA PIPA · Built with 🐝 and Claude</div>
+
+<script>
+const SUPA_URL = 'https://zrdywdregcrykmbiytvl.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpyZHl3ZHJlZ2NyeWttYml5dHZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3MzcyNzQsImV4cCI6MjA2OTMxMzI3NH0.6FgluqbBlAYoUCUZXkCdB1-pGU554L-6bkjjhDuqJfg';
+
+const MODULE_ICONS = {
+  bee_facts: '🍯', bilingual_vocabulary: '🗣️',
+  permaculture: '🌱', seed_saving: '🌰'
+};
+
+const FALLBACK_MODULES = [
+  {slug:'bee-hive-life-1',title_en:'Life in the Hive',title_es:'La Vida en la Colmena',description_en:'Meet the queen, taste the honey, learn how bees work together.',content_pillar:'bee_facts',is_published:true,storycards_count:1},
+  {slug:'bilingual-bee-words-1',title_en:'Bee Words: Your First 8',title_es:'Palabras de Abeja: Tus Primeras 8',description_en:'Learn 8 essential bee words in English and Spanish.',content_pillar:'bilingual_vocabulary',is_published:true,storycards_count:0},
+  {slug:'mochi-garden-1',title_en:"Mochi's Garden Adventure",title_es:'La Aventura en el Jardín de Mochi',description_en:'Discover why every plant matters and how to help nature thrive.',content_pillar:'permaculture',is_published:false,storycards_count:0},
+  {slug:'seed-keepers-1',title_en:'The Seed Keepers',title_es:'Los Guardianes de las Semillas',description_en:'How saving and sharing seeds keeps food and nature alive.',content_pillar:'seed_saving',is_published:false,storycards_count:0}
+];
+
+const FALLBACK_FACTS = [
+  'Bees perform a waggle dance to tell their friends exactly where the best flowers are!',
+  'A single bee visits up to 1,500 flowers in one day.',
+  'Bees have 5 eyes — 2 big compound eyes and 3 tiny ones on top.',
+  'Honeybees are the only insects that produce food eaten by humans.',
+  'A colony can have up to 60,000 bees in summer!'
+];
+
+let isOnline = false;
+let sessionToken = localStorage.getItem('mochi-session') || (()=>{const t='s'+Date.now();localStorage.setItem('mochi-session',t);return t;})();
+let lang = localStorage.getItem('mochi-lang') || 'en';
+
+async function supaFetch(path) {
+  const r = await fetch(SUPA_URL + path, {
+    headers: { apikey: SUPA_KEY, Authorization: 'Bearer ' + SUPA_KEY }
+  });
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+
+function setStatus(online) {
+  isOnline = online;
+  document.getElementById('status-dot').className = online ? 'dot-online' : 'dot-offline';
+  document.getElementById('status-text').textContent = online
+    ? 'Connected to the hive — progress is saved!'
+    : 'Offline mode — Mochi still works, progress saves when you reconnect.';
+}
+
+function renderModules(modules) {
+  const grid = document.getElementById('modules-grid');
+  grid.innerHTML = modules.map(m => {
+    const live = m.is_published;
+    const hasCards = m.storycards_count > 0;
+    const title = lang === 'es' ? m.title_es : m.title_en;
+    const desc = lang === 'es' ? (m.description_es || m.description_en) : m.description_en;
+    const href = hasCards ? `storycard.html?module=${m.slug}` : '#';
+    return `<a class="card${live ? '' : ' locked'}" href="${href}">
+      <span class="card-icon">${MODULE_ICONS[m.content_pillar] || '🌿'}</span>
+      <div class="card-title">${title}</div>
+      <div class="card-sub">${desc}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="card-tag tag-pillar">${m.content_pillar.replace('_',' ')}</span>
+        <span class="card-tag ${live ? 'tag-live' : 'tag-soon'}">${live ? (hasCards ? '▶ play now' : '✓ live') : '⏳ coming soon'}</span>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+function renderFact(facts) {
+  const fact = facts[Math.floor(Math.random() * facts.length)];
+  const content = typeof fact === 'string' ? fact : fact.content;
+  document.getElementById('fact-container').innerHTML =
+    `<div class="fact-block"><div class="fact-text">🐝 ${content}</div></div>`;
+}
+
+async function init() {
+  // Try Supabase
+  try {
+    const [modules, facts] = await Promise.all([
+      supaFetch('/rest/v1/learning_modules?select=*,storycards(count)&is_published=eq.true&order=sequence_order.asc'),
+      supaFetch('/rest/v1/bee_facts?select=content,category&limit=20')
+    ]);
+    setStatus(true);
+    // Add storycard count
+    const enriched = modules.map(m => ({...m, storycards_count: m.storycards?.[0]?.count || 0}));
+    localStorage.setItem('mochi-modules', JSON.stringify(enriched));
+    localStorage.setItem('mochi-facts', JSON.stringify(facts));
+    renderModules(enriched);
+    renderFact(facts);
+  } catch(e) {
+    setStatus(false);
+    // Use cache
+    const cachedModules = JSON.parse(localStorage.getItem('mochi-modules') || 'null');
+    const cachedFacts = JSON.parse(localStorage.getItem('mochi-facts') || 'null');
+    renderModules(cachedModules || FALLBACK_MODULES);
+    renderFact(cachedFacts || FALLBACK_FACTS);
+  }
+}
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+
+init();
+</script>
+</body>
+</html>
